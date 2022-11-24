@@ -19,16 +19,10 @@ public class f_signup extends AppCompatActivity {
         name= findViewById(R.id.name);
         userID= findViewById(R.id.userId);
         userPwd= findViewById(R.id.userPwd);
-        userDesignation= findViewById(R.id.userDesignation);
-        userClass= findViewById(R.id.userClass);
         submit= findViewById(R.id.signUP);
-        userClass.setVisibility(View.INVISIBLE);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(userDesignation.getText().toString().toLowerCase().equals("hod")){
-                    userClass.setVisibility(View.VISIBLE);
-                }
                 Toast.makeText(f_signup.this, "Signed Up successfully!", Toast.LENGTH_SHORT).show();
                 Intent intent= new Intent(f_signup.this, f_login.class);
                 startActivity(intent);
