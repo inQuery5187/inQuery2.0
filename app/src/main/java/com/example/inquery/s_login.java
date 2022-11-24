@@ -20,8 +20,8 @@ public class s_login extends AppCompatActivity {
         setContentView(R.layout.activity_slogin);
         userId= findViewById(R.id.userId);
         userPwd= findViewById(R.id.userPwd);
-        signUp= findViewById(R.id.signUp);
-        login= findViewById(R.id.Login);
+        signUp= findViewById(R.id.studentBtn);
+        login= findViewById(R.id.facultyBtn);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

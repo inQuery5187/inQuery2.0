@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/Login"
+        android:id="@+id/facultyBtn"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginBottom="88dp"
@@ -26,7 +26,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/signUp"
+        android:id="@+id/studentBtn"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:background="#6200ED"
