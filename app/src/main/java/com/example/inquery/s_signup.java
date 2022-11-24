@@ -9,9 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class s_signup extends AppCompatActivity {
-    EditText name, userID, userPwd, userDesignation, userClass;
+    EditText name, userID, userPwd, cpwd;
     Button submit;
+    DatabaseReference reference;
+    Data Data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,22 +24,30 @@ public class s_signup extends AppCompatActivity {
         name= findViewById(R.id.name);
         userID= findViewById(R.id.userId);
         userPwd= findViewById(R.id.userPwd);
-        userDesignation= findViewById(R.id.userDesignation);
-        userClass= findViewById(R.id.userClass);
+        cpwd= findViewById(R.id.cpwd);
+
         submit= findViewById(R.id.signUP);
-        userClass.setVisibility(View.INVISIBLE);
-        submit.setOnClickListener(new View.OnClickListener() {
+        Data=new Data();
+        reference= FirebaseDatabase.getInstance().getReference().child("Data");
+        submit.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                if(userDesignation.getText().toString().toLowerCase().equals("hod")){
-                    userClass.setVisibility(View.VISIBLE);
-                }
-                Toast.makeText(s_signup.this, "Signed Up successfully!", Toast.LENGTH_SHORT).show();
+            public void onClick(View view){
+                String nam = name.getText().toString().trim();
+                Data.setName(nam);
+                Data.setUsername(userID.getText().toString().trim());
+                Data.setPwd(userPwd.getText().toString().trim());
+                Data.setCpwd(cpwd.getText().toString().trim());
+                reference.child("Student").setValue(Data);
+                Toast.makeText(s_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
                 Intent intent= new Intent(s_signup.this, s_login.class);
                 startActivity(intent);
                 finish();
             }
         });
+
+
+
+
 
     }
 }
