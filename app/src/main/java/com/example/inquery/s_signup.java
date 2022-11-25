@@ -28,7 +28,7 @@ public class s_signup extends AppCompatActivity {
 
         submit= findViewById(R.id.signUP);
         Data=new Data();
-        reference= FirebaseDatabase.getInstance().getReference().child("Data");
+        reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Student");
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -37,17 +37,12 @@ public class s_signup extends AppCompatActivity {
                 Data.setUsername(userID.getText().toString().trim());
                 Data.setPwd(userPwd.getText().toString().trim());
                 Data.setCpwd(cpwd.getText().toString().trim());
-                reference.child("Student").setValue(Data);
+                reference.child(userID.getText().toString().trim()).setValue(Data);
                 Toast.makeText(s_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
                 Intent intent= new Intent(s_signup.this, s_login.class);
                 startActivity(intent);
                 finish();
             }
         });
-
-
-
-
-
     }
 }

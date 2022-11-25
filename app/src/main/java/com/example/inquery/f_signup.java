@@ -25,19 +25,20 @@ public class f_signup extends AppCompatActivity {
         userID= findViewById(R.id.userId);
         userPwd= findViewById(R.id.userPwd);
         cpwd= findViewById(R.id.cpwd);
-
         submit= findViewById(R.id.signUP);
         Data=new Data();
-        reference= FirebaseDatabase.getInstance().getReference().child("Data");
+        int i=1;
+        reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Faculty");
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+
                 String nam = name.getText().toString().trim();
                 Data.setName(nam);
                 Data.setUsername(userID.getText().toString().trim());
                 Data.setPwd(userPwd.getText().toString().trim());
                 Data.setCpwd(cpwd.getText().toString().trim());
-                reference.child("Faculty").setValue(Data);
+                reference.child(userID.getText().toString().trim()).setValue(Data);
                 Toast.makeText(f_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
                 Intent intent= new Intent(f_signup.this, f_login.class);
                 startActivity(intent);
