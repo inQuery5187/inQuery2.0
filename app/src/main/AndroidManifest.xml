@@ -20,6 +20,9 @@
             android:name=".f_signup"
             android:exported="false" />
         <activity
+            android:name=".s_query"
+            android:exported="false" />
+        <activity
             android:name=".s_profile"
             android:exported="false" />
         <activity
