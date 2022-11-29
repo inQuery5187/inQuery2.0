@@ -21,7 +21,7 @@ public class s_signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ssignup);
-        name= findViewById(R.id.name);
+        name= findViewById(R.id.backgroundtop);
         userID= findViewById(R.id.userId);
         userPwd= findViewById(R.id.userPwd);
         cpwd= findViewById(R.id.cpwd);
