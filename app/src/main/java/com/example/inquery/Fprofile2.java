@@ -28,7 +28,7 @@ public class Fprofile2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String n=name.getText().toString();
-                int r=Integer.parseInt(rollno.getText().toString());
+                String r=rollno.getText().toString();
                 String b=branch.getText().toString();
                 String g=gender.getText().toString();
                 String p=phoneno.getText().toString();
