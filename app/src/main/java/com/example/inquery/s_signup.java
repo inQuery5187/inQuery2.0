@@ -25,7 +25,6 @@ public class s_signup extends AppCompatActivity {
         userID= findViewById(R.id.userId);
         userPwd= findViewById(R.id.userPwd);
         cpwd= findViewById(R.id.cpwd);
-
         submit= findViewById(R.id.signUP);
         Data=new Data();
         reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Student");
@@ -36,12 +35,18 @@ public class s_signup extends AppCompatActivity {
                 Data.setName(nam);
                 Data.setUsername(userID.getText().toString().trim());
                 Data.setPwd(userPwd.getText().toString().trim());
-                Data.setCpwd(cpwd.getText().toString().trim());
-                reference.child(userID.getText().toString().trim()).setValue(Data);
-                Toast.makeText(s_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
-                Intent intent= new Intent(s_signup.this, s_login.class);
-                startActivity(intent);
-                finish();
+                String p= userPwd.getText().toString();
+                String cp=cpwd.getText().toString();
+                if (p.equals(cp)) {
+                    reference.child(userID.getText().toString().trim()).setValue(Data);
+                    Toast.makeText(s_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(s_signup.this, s_login.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    Toast.makeText(s_signup.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -24,10 +24,10 @@ public class s_profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fprofile);
+        setContentView(R.layout.activity_sprofile);
         userId= findViewById(R.id.userId);
         name= findViewById(R.id.backgroundtop);
-        query= findViewById(R.id.button);
+        query= findViewById(R.id.querybox);
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty");
         reference.child("2021b1541083").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -48,7 +48,7 @@ public class s_profile extends AppCompatActivity {
         query.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(s_profile.this, s_query.class);
+                Intent intent= new Intent(s_profile.this, queries.class);
                 startActivity(intent);
                 finish();
             }

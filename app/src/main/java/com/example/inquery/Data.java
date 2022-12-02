@@ -10,6 +10,11 @@ private String gender;
 private String phoneno;
 private String email;
 private String address;
+private String cpwd;
+
+    public String getCpwd() { return cpwd; }
+
+    public void setCpwd(String cpwd) { this.cpwd = cpwd; }
 
     public String getPhoneno() { return phoneno; }
 
