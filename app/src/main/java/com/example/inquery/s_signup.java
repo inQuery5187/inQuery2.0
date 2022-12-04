@@ -32,12 +32,13 @@ public class s_signup extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 String nam = name.getText().toString().trim();
-                Data.setName(nam);
-                Data.setUsername(userID.getText().toString().trim());
-                Data.setPwd(userPwd.getText().toString().trim());
+                String usernam = userID.getText().toString().trim();
                 String p= userPwd.getText().toString();
-                String cp=cpwd.getText().toString();
-                if (p.equals(cp)) {
+                String cp = cpwd.getText().toString();
+                if (p.equals(cp)&&p.length()>=8&&nam.length()>=6&&usernam.length()>=6) {
+                Data.setName(nam);
+                Data.setUsername(usernam);
+                Data.setPwd(p);
                     reference.child(userID.getText().toString().trim()).setValue(Data);
                     Toast.makeText(s_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(s_signup.this, s_login.class);
@@ -45,7 +46,7 @@ public class s_signup extends AppCompatActivity {
                     finish();
                 }
                 else{
-                    Toast.makeText(s_signup.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(s_signup.this, "please fill correct details", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -34,15 +34,22 @@ public class f_signup extends AppCompatActivity {
             public void onClick(View view){
 
                 String nam = name.getText().toString().trim();
-                Data.setName(nam);
-                Data.setUsername(userID.getText().toString().trim());
-                Data.setPwd(userPwd.getText().toString().trim());
-                Data.setCpwd(cpwd.getText().toString().trim());
-                reference.child(userID.getText().toString().trim()).setValue(Data);
-                Toast.makeText(f_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
-                Intent intent= new Intent(f_signup.this, f_login.class);
-                startActivity(intent);
-                finish();
+                String usernam = userID.getText().toString().trim();
+                String p= userPwd.getText().toString();
+                String cp = cpwd.getText().toString();
+                if (p.equals(cp)&&p.length()>=8&&nam.length()>=6&&usernam.length()>=6) {
+                    Data.setName(nam);
+                    Data.setUsername(usernam);
+                    Data.setPwd(p);
+                    reference.child(userID.getText().toString().trim()).setValue(Data);
+                    Toast.makeText(f_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(f_signup.this, f_login.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    Toast.makeText(f_signup.this, "please fill correct details", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
