@@ -114,6 +114,10 @@
 
     <TextView
         android:id="@+id/spinner"
+        android:text="Choose Reciever: "
+        android:textColor="#6B5DB1"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="28dp"
