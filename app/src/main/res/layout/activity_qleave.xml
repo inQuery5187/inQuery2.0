@@ -27,6 +27,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/montserrat"
         android:text="To:"
+        android:textColor="#6B5DB1"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +112,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <Spinner
+    <TextView
         android:id="@+id/spinner"
         android:layout_width="300dp"
         android:layout_height="40dp"
