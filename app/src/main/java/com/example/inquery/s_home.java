@@ -50,15 +50,13 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
 
             case R.id.nav_profile:
             {
-                Intent intent= new Intent(this, s_profile.class);
-                startActivity(intent);
+                navProfile();
                 return true;
             }
 
             case R.id.nav_queries:
             {
-                Intent intents= new Intent(this, s_query.class);
-                startActivity(intents);
+                navQueries();
                 return true;
             }
 
@@ -89,10 +87,12 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
     private void navAccount() {
     }
     private void navProfile() {
-
+        Intent intent= new Intent(this, s_profile.class);
+        startActivity(intent);
     }
     private void navQueries() {
-
+        Intent intents= new Intent(this, s_query.class);
+        startActivity(intents);
     }
     private void navSettings() {
     }
