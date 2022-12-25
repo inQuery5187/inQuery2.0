@@ -57,9 +57,6 @@ public class s_login extends AppCompatActivity {
                         }
                     }
                 });
-                Intent intent= new Intent(s_login.this, s_home.class);
-                startActivity(intent);
-                finish();
             }
         });
         signUp.setOnClickListener(new View.OnClickListener() {

@@ -43,8 +43,8 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
 
-            case R.id.nav_account:{
-                navAccount();
+            case R.id.nav_home:{
+                navHome();
                 return true;
             }
 
@@ -84,14 +84,16 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
         return super.onOptionsItemSelected(item);
     }
 
-    private void navAccount() {
+    private void navHome() {
+        Intent intent= new Intent(this, s_home.class);
+        startActivity(intent);
     }
     private void navProfile() {
         Intent intent= new Intent(this, s_profile.class);
         startActivity(intent);
     }
     private void navQueries() {
-        Intent intents= new Intent(this, s_query.class);
+        Intent intents= new Intent(this, queries.class);
         startActivity(intents);
     }
     private void navSettings() {
