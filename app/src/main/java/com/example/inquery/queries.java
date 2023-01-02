@@ -27,7 +27,7 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
         setNavigationViewListener();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         leave=findViewById(R.id.leave);
-        doc=findViewById(R.id.doc);
+//        doc=findViewById(R.id.doc);
         suggest=findViewById(R.id.suggest);
         complaint=findViewById(R.id.complaint);
         miscon=findViewById(R.id.miscon);

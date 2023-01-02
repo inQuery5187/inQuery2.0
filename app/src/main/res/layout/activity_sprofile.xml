@@ -6,61 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".f_signup">
 
-    <TextView
-        android:id="@+id/userId"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="308dp"
-        android:ems="10"
-        android:hint="@string/username_signup"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/backgroundtop"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="@string/name"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userId"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="365dp"
-        android:layout_height="116dp"
-        android:layout_marginTop="96dp"
-        android:gravity="center"
-        android:text="Student Profile"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/querybox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="113dp"
-        android:text="Enter Query"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/my_drawer_layout1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backgroundtop"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:context=".MainActivity"
+        tools:ignore="HardcodedText">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/userId"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/backgroundtop"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="105.5dp"
+                android:layout_marginTop="58dp"
+                android:layout_marginEnd="105.5dp"
+                android:ems="10"
+                android:hint="@string/username_signup"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColorHint="#757575"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="365dp"
+                android:layout_height="173dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="23.5dp"
+                android:layout_marginTop="96dp"
+                android:layout_marginEnd="23.5dp"
+                android:gravity="center"
+                android:text="Student Profile"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/backgroundtop"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="105.5dp"
+                android:layout_marginTop="87dp"
+                android:layout_marginEnd="105.5dp"
+                android:ems="10"
+                android:hint="@string/name"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColorHint="#757575"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userId"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/querybox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userId"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="137.5dp"
+                android:layout_marginTop="108dp"
+                android:layout_marginEnd="137.5dp"
+                android:text="Edit Profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backgroundtop"
+                app:layout_constraintVertical_bias="0.0" />
+        </RelativeLayout>
+
+        <!-- this the navigation view which draws and shows the navigation drawer -->
+        <!-- include the menu created in the menu folder -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/navigation_menu" />
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
