@@ -1,35 +1,60 @@
 package com.example.inquery;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class q_leave extends AppCompatActivity {
     TextView teachersel;
-
+    DatabaseReference reference;
+    String[] listItems;
+    boolean[] checkedItems;
+    ArrayList<Integer> mUserItems= new ArrayList<Integer>();
+    ArrayList<String> nameArr= new ArrayList<String>();
+    ArrayList<String> userArr= new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qleave);
         teachersel= findViewById(R.id.spinner);
-        String[] listItems={"life","was","a","willow"};
-        boolean[] checkedItems;
-        checkedItems= new boolean[listItems.length];
-        ArrayList<Integer> mUserItems= new ArrayList<Integer>();
+        reference= FirebaseDatabase.getInstance().getReference("Data");
+        reference.child("Faculty").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    nameArr.add(String.valueOf(dataSnapshot.child("name").getValue()));
+                    userArr.add(String.valueOf(dataSnapshot.child("username").getValue()));
+                }
+                listItems=getValue();
+                checkedItems= new boolean[listItems.length];
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         teachersel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder mbuilder = new AlertDialog.Builder(q_leave.this);
                 mbuilder.setTitle("select the receiver");
-
-
-
+                String[] x= new String[nameArr.size()];
                 mbuilder.setMultiChoiceItems(listItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int position, boolean Checked) {
@@ -39,11 +64,9 @@ public class q_leave extends AppCompatActivity {
                         }else{
                             mUserItems.remove((Integer.valueOf(position)));
                         }
-
                     }
                 });
                 mbuilder.setCancelable(false);
-
                 mbuilder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
@@ -59,9 +82,7 @@ public class q_leave extends AppCompatActivity {
                                 item = item+ ", ";
                             }
                         }
-
-
-                        teachersel.setText(item);
+                        teachersel.setText("Choose Reciever: "+item);
                     }
                 });
                 mbuilder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -86,6 +107,14 @@ public class q_leave extends AppCompatActivity {
             }
         });
 
-
+    }
+    private String[] getValue(){
+        ArrayList<String> arr3= new ArrayList<>();
+        for(int i =0; i<nameArr.size(); i++) {
+            arr3.add(nameArr.get(i)+"("+userArr.get(i)+")");
+            Log.d("VALUEEEE", arr3.get(i));
+        }
+        String[] x= {};
+        return arr3.toArray(x);
     }
 }
