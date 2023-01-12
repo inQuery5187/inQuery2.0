@@ -21,7 +21,7 @@ public class f_signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fsignup);
-        name= findViewById(R.id.backgroundtop);
+        name= findViewById(R.id.userName);
         userID= findViewById(R.id.userId);
         userPwd= findViewById(R.id.userPwd);
         cpwd= findViewById(R.id.cpwd);
@@ -31,13 +31,13 @@ public class f_signup extends AppCompatActivity {
         reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Faculty");
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
 
                 String nam = name.getText().toString().trim();
                 String usernam = userID.getText().toString().trim();
-                String p= userPwd.getText().toString();
+                String p = userPwd.getText().toString();
                 String cp = cpwd.getText().toString();
-                if (p.equals(cp)&&p.length()>=8&&nam.length()>=6&&usernam.length()>=6) {
+                if (p.equals(cp)) {
                     Data.setName(nam);
                     Data.setUsername(usernam);
                     Data.setPwd(p);
@@ -46,16 +46,10 @@ public class f_signup extends AppCompatActivity {
                     Intent intent = new Intent(f_signup.this, f_login.class);
                     startActivity(intent);
                     finish();
-                }
-                else{
-                    Toast.makeText(f_signup.this, "please fill correct details", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(f_signup.this, "password and repeat password don't match", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-
-
-
-
     }
 }
