@@ -37,7 +37,7 @@ public class f_signup extends AppCompatActivity {
                 String usernam = userID.getText().toString().trim();
                 String p= userPwd.getText().toString();
                 String cp = cpwd.getText().toString();
-                if (p.equals(cp)&&p.length()>=8&&nam.length()>=6&&usernam.length()>=6) {
+                if (p.equals(cp)&&p.length()>=8&&nam.length()>0&&usernam.length()>=6) {
                     Data.setName(nam);
                     Data.setUsername(usernam);
                     Data.setPwd(p);
