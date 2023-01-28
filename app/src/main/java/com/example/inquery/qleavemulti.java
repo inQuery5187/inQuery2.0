@@ -16,10 +16,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class q_leave extends AppCompatActivity {
+public class qleavemulti extends AppCompatActivity {
     TextView teachersel;
     DatabaseReference reference;
     String[] listItems;
@@ -30,7 +29,7 @@ public class q_leave extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qleave);
+        setContentView(R.layout.activity_qleavemulti);
         teachersel= findViewById(R.id.spinner);
         reference= FirebaseDatabase.getInstance().getReference("Data");
         reference.child("Faculty").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -52,7 +51,7 @@ public class q_leave extends AppCompatActivity {
         teachersel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder mbuilder = new AlertDialog.Builder(q_leave.this);
+                AlertDialog.Builder mbuilder = new AlertDialog.Builder(qleavemulti.this);
                 mbuilder.setTitle("select the receiver");
                 String[] x= new String[nameArr.size()];
                 mbuilder.setMultiChoiceItems(listItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {

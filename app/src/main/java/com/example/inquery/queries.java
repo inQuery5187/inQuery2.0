@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import com.google.android.material.navigation.NavigationView;
 
 public class queries extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-    ImageView leave, doc, suggest, complaint, miscon, custom, qbox, profilebox;
+    ImageView leavesingle, doc, leavemulti, complaint, miscon, custom, qbox, profilebox;
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     public NavigationView navigationView;
@@ -26,19 +26,26 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
         setContentView(R.layout.activity_queries);
         setNavigationViewListener();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
-        leave=findViewById(R.id.leave);
+        leavesingle=findViewById(R.id.leavesingle);
 //        doc=findViewById(R.id.doc);
-        suggest=findViewById(R.id.suggest);
+        leavemulti=findViewById(R.id.leavemulti);
         complaint=findViewById(R.id.complaint);
         miscon=findViewById(R.id.miscon);
         custom=findViewById(R.id.custom);
 //        qbox=findViewById(R.id.qbox);
 //        profilebox=findViewById(R.id.profilebox);
 
-        leave.setOnClickListener(new View.OnClickListener() {
+        leavesingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(queries.this, q_leave.class);
+                Intent intent= new Intent(queries.this, qleavesingle.class);
+                startActivity(intent);
+            }
+        });
+        leavemulti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(queries.this, qleavemulti.class);
                 startActivity(intent);
             }
         });
