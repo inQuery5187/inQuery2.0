@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,7 +49,7 @@ public class s_login extends AppCompatActivity {
                                 if(pwdChk.equals(pwd)){
 
                                     Toast.makeText(s_login.this, "Logged in using Password!", Toast.LENGTH_SHORT).show();
-                                    Intent extraIntent = new Intent(s_login.this, s_profile.class);
+                                    Intent extraIntent = new Intent(s_login.this, s_home.class);
                                     startActivity(extraIntent);
                                     finish();
                                 }
@@ -58,9 +57,6 @@ public class s_login extends AppCompatActivity {
                         }
                     }
                 });
-                Intent intent= new Intent(s_login.this, s_profile.class);
-                startActivity(intent);
-                finish();
             }
         });
         signUp.setOnClickListener(new View.OnClickListener() {

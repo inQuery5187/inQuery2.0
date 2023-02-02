@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".q_leave">
+    tools:context=".qleavemulti">
 
     <EditText
         android:id="@+id/editTextDate2"
@@ -27,6 +27,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/montserrat"
         android:text="To:"
+        android:textColor="#6B5DB1"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
-        android:text="Leave Application"
+        android:text="Leave (multi day)"
         android:textColor="#6B5DB1"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -111,8 +112,12 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <Spinner
+    <TextView
         android:id="@+id/spinner"
+        android:text="Choose Reciever: "
+        android:textColor="#6B5DB1"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="28dp"
@@ -132,4 +137,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="124dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/submit_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

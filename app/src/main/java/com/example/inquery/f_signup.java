@@ -21,7 +21,7 @@ public class f_signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fsignup);
-        name= findViewById(R.id.backgroundtop);
+        name= findViewById(R.id.userName);
         userID= findViewById(R.id.userId);
         userPwd= findViewById(R.id.userPwd);
         cpwd= findViewById(R.id.cpwd);
@@ -31,24 +31,25 @@ public class f_signup extends AppCompatActivity {
         reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Faculty");
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
 
                 String nam = name.getText().toString().trim();
-                Data.setName(nam);
-                Data.setUsername(userID.getText().toString().trim());
-                Data.setPwd(userPwd.getText().toString().trim());
-                Data.setCpwd(cpwd.getText().toString().trim());
-                reference.child(userID.getText().toString().trim()).setValue(Data);
-                Toast.makeText(f_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
-                Intent intent= new Intent(f_signup.this, f_login.class);
-                startActivity(intent);
-                finish();
+                String usernam = userID.getText().toString().trim();
+                String p = userPwd.getText().toString();
+                String cp = cpwd.getText().toString();
+                if (p.equals(cp)) {
+                    Data.setName(nam);
+                    Data.setUsername(usernam);
+                    Data.setPwd(p);
+                    reference.child(userID.getText().toString().trim()).setValue(Data);
+                    Toast.makeText(f_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(f_signup.this, f_login.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(f_signup.this, "password and repeat password don't match", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
-
-
-
-
     }
 }

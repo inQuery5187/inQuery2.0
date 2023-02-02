@@ -6,224 +6,278 @@
     android:layout_height="match_parent"
     tools:context=".queries">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="85dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backgroundtop" />
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/my_drawer_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:ignore="HardcodedText">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat"
-        android:text="QUERIES"
-        android:textColor="#7268A6"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/leave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/rectangular_button" />
+            <!--    <ImageView-->
+            <!--        android:id="@+id/doc"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_marginTop="16dp"-->
+            <!--        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--        app:layout_constraintHorizontal_bias="0.497"-->
+            <!--        app:layout_constraintStart_toStartOf="parent"-->
+            <!--        app:layout_constraintTop_toBottomOf="@+id/leave"-->
+            <!--        app:srcCompat="@drawable/rectangular_button" />-->
 
-    <ImageView
-        android:id="@+id/doc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leave"
-        app:srcCompat="@drawable/rectangular_button" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/backgroundtop" />
 
-    <ImageView
-        android:id="@+id/suggest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doc"
-        app:srcCompat="@drawable/rectangular_button" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="139dp"
+                android:layout_height="42dp"
+                android:layout_alignBottom="@+id/imageView2"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="137dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="135dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="QUERIES"
+                android:textColor="#7268A6"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/complaint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/suggest"
-        app:srcCompat="@drawable/rectangular_button" />
+            <ImageView
+                android:id="@+id/leavesingle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="59dp"
+                android:layout_marginTop="182dp"
+                android:layout_marginEnd="62dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:srcCompat="@drawable/rectangular_button" />
 
-    <ImageView
-        android:id="@+id/miscon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/complaint"
-        app:srcCompat="@drawable/rectangular_button" />
+            <ImageView
+                android:id="@+id/leavemulti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leavesingle"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="61dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/rectangular_button" />
 
-    <ImageView
-        android:id="@+id/custom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/miscon"
-        app:srcCompat="@drawable/rectangular_button" />
+            <ImageView
+                android:id="@+id/complaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leavemulti"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="61dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/leavemulti"
+                app:srcCompat="@drawable/rectangular_button" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="0dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bottom_rectangle" />
+            <ImageView
+                android:id="@+id/miscon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/complaint"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="61dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/complaint"
+                app:srcCompat="@drawable/rectangular_button" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Leave Application"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/leave"
-        app:layout_constraintEnd_toEndOf="@+id/leave"
-        app:layout_constraintHorizontal_bias="0.22"
-        app:layout_constraintStart_toStartOf="@+id/leave"
-        app:layout_constraintTop_toTopOf="@+id/leave"
-        app:layout_constraintVertical_bias="0.514" />
+            <ImageView
+                android:id="@+id/custom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/miscon"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="61dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/miscon"
+                app:srcCompat="@drawable/rectangular_button" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Documention"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/doc"
-        app:layout_constraintEnd_toEndOf="@+id/doc"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="@+id/doc"
-        app:layout_constraintTop_toTopOf="@+id/doc"
-        app:layout_constraintVertical_bias="0.428" />
+            <!--    <TextView-->
+            <!--        android:id="@+id/textView8"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:text="Documention"-->
+            <!--        android:textSize="20sp"-->
+            <!--        android:textStyle="bold"-->
+            <!--        app:layout_constraintBottom_toBottomOf="@+id/doc"-->
+            <!--        app:layout_constraintEnd_toEndOf="@+id/doc"-->
+            <!--        app:layout_constraintHorizontal_bias="0.167"-->
+            <!--        app:layout_constraintStart_toStartOf="@+id/doc"-->
+            <!--        app:layout_constraintTop_toTopOf="@+id/doc"-->
+            <!--        app:layout_constraintVertical_bias="0.428" />-->
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Suggestions"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/suggest"
-        app:layout_constraintEnd_toEndOf="@+id/suggest"
-        app:layout_constraintHorizontal_bias="0.16"
-        app:layout_constraintStart_toStartOf="@+id/suggest"
-        app:layout_constraintTop_toTopOf="@+id/suggest"
-        app:layout_constraintVertical_bias="0.342" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="204dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/leavesingle"
+                android:layout_alignTop="@+id/leavesingle"
+                android:layout_alignEnd="@+id/leavesingle"
+                android:layout_alignBottom="@+id/leavesingle"
+                android:layout_marginStart="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="43dp"
+                android:layout_marginBottom="19dp"
+                android:gravity="center"
+                android:text="Leave (single day)"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/leavesingle"
+                app:layout_constraintEnd_toEndOf="@+id/leavesingle"
+                app:layout_constraintHorizontal_bias="0.22"
+                app:layout_constraintStart_toStartOf="@+id/leavesingle"
+                app:layout_constraintTop_toTopOf="@+id/leavesingle"
+                app:layout_constraintVertical_bias="0.514" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Complaints"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/complaint"
-        app:layout_constraintEnd_toEndOf="@+id/complaint"
-        app:layout_constraintHorizontal_bias="0.156"
-        app:layout_constraintStart_toStartOf="@+id/complaint"
-        app:layout_constraintTop_toTopOf="@+id/complaint"
-        app:layout_constraintVertical_bias="0.342" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/leavemulti"
+                android:layout_alignTop="@+id/leavemulti"
+                android:layout_alignEnd="@+id/leavemulti"
+                android:layout_alignBottom="@+id/leavemulti"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="19dp"
+                android:gravity="center"
+                android:text="Leave (multi day)"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/leavemulti"
+                app:layout_constraintEnd_toEndOf="@+id/leavemulti"
+                app:layout_constraintHorizontal_bias="0.16"
+                app:layout_constraintStart_toStartOf="@+id/leavemulti"
+                app:layout_constraintTop_toTopOf="@+id/leavemulti"
+                app:layout_constraintVertical_bias="0.342" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Misconduct"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/miscon"
-        app:layout_constraintEnd_toEndOf="@+id/miscon"
-        app:layout_constraintHorizontal_bias="0.159"
-        app:layout_constraintStart_toStartOf="@+id/miscon"
-        app:layout_constraintTop_toTopOf="@+id/miscon"
-        app:layout_constraintVertical_bias="0.371" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/complaint"
+                android:layout_alignTop="@+id/complaint"
+                android:layout_alignEnd="@+id/complaint"
+                android:layout_alignBottom="@+id/complaint"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="17.5dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="17.5dp"
+                android:gravity="center"
+                android:text="Complaints"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/complaint"
+                app:layout_constraintEnd_toEndOf="@+id/complaint"
+                app:layout_constraintHorizontal_bias="0.156"
+                app:layout_constraintStart_toStartOf="@+id/complaint"
+                app:layout_constraintTop_toTopOf="@+id/complaint"
+                app:layout_constraintVertical_bias="0.342" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Custom Query"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/custom"
-        app:layout_constraintEnd_toEndOf="@+id/custom"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toStartOf="@+id/custom"
-        app:layout_constraintTop_toTopOf="@+id/custom"
-        app:layout_constraintVertical_bias="0.342" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/miscon"
+                android:layout_alignTop="@+id/miscon"
+                android:layout_alignEnd="@+id/miscon"
+                android:layout_alignBottom="@+id/miscon"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="17.5dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="17.5dp"
+                android:gravity="center"
+                android:text="Misconduct"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/miscon"
+                app:layout_constraintEnd_toEndOf="@+id/miscon"
+                app:layout_constraintHorizontal_bias="0.159"
+                app:layout_constraintStart_toStartOf="@+id/miscon"
+                app:layout_constraintTop_toTopOf="@+id/miscon"
+                app:layout_constraintVertical_bias="0.371" />
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/home_icon" />
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/custom"
+                android:layout_alignTop="@+id/custom"
+                android:layout_alignEnd="@+id/custom"
+                android:layout_alignBottom="@+id/custom"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="17.5dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="17.5dp"
+                android:gravity="center"
+                android:text="Custom Query"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/custom"
+                app:layout_constraintEnd_toEndOf="@+id/custom"
+                app:layout_constraintHorizontal_bias="0.169"
+                app:layout_constraintStart_toStartOf="@+id/custom"
+                app:layout_constraintTop_toTopOf="@+id/custom"
+                app:layout_constraintVertical_bias="0.342" />
 
-    <ImageView
-        android:id="@+id/qbox"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView14"
-        app:srcCompat="@drawable/application_icon" />
 
-    <ImageView
-        android:id="@+id/profilebox"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/qbox"
-        app:srcCompat="@drawable/profile_icon" />
+        </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profilebox"
-        app:srcCompat="@drawable/settings_icon" />
+        <!-- this the navigation view which draws and shows the navigation drawer -->
+        <!-- include the menu created in the menu folder -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/navigation_menu" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

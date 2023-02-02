@@ -7,6 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".qleavemulti">
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/montserrat"
+        android:text="If medical, attach documents:"
+        android:textColor="#6B5DB1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Date: "
+        android:textColor="#6B5DB1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="0dp"
@@ -23,7 +51,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/montserrat"
-        android:text="Query:"
+        android:text="Reason:"
         android:textColor="#6B5DB1"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -35,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
-        android:text="Custom Query"
+        android:text="Leave (single day)"
         android:textColor="#6B5DB1"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -58,8 +86,12 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <Spinner
+    <TextView
         android:id="@+id/spinner"
+        android:text="Choose Reciever: "
+        android:textColor="#6B5DB1"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="28dp"
@@ -68,8 +100,20 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="124dp"

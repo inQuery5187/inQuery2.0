@@ -14,7 +14,23 @@
         android:theme="@style/Theme.InQuery"
         tools:targetApi="31">
         <activity
-            android:name=".settings"
+            android:name=".qleavesingle"
+            android:exported="false"
+            android:label="@string/title_activity_qleavesingle"
+            android:theme="@style/Theme.InQuery.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".s_home"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".qmisconduct"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -42,7 +58,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".q_leave"
+            android:name=".qleavemulti"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
