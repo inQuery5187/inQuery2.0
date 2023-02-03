@@ -87,14 +87,17 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
     private void navHome() {
         Intent intent= new Intent(this, s_home.class);
         startActivity(intent);
+        finish();
     }
     private void navProfile() {
         Intent intent= new Intent(this, s_profile.class);
         startActivity(intent);
+        finish();
     }
     private void navQueries() {
         Intent intents= new Intent(this, queries.class);
         startActivity(intents);
+        finish();
     }
     private void navSettings() {
     }
@@ -102,5 +105,11 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(s_home.this, s_login.class);
+        startActivity(intent);
+        finish();
+    }
 }

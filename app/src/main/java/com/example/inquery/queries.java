@@ -63,13 +63,13 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(intent);
             }
         });
-//        qbox.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent= new Intent(queries.this, queries.class);
-//                startActivity(intent);
-//            }
-//        });
+        miscon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(queries.this, qmisconduct.class);
+                startActivity(intent);
+            }
+        });
 //        profilebox.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -152,5 +152,12 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
     private void setNavigationViewListener() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(queries.this, s_home.class);
+        startActivity(intent);
+        finish();
     }
 }

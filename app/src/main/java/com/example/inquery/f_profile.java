@@ -26,7 +26,7 @@ public class f_profile extends AppCompatActivity {
         setContentView(R.layout.activity_fprofile);
         userId= findViewById(R.id.userId);
         name= findViewById(R.id.userName);
-        querybox=findViewById(R.id.querybox);
+        querybox=findViewById(R.id.requests);
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty");
         reference.child("2021b1541083").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -52,5 +52,12 @@ public class f_profile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(f_profile.this, f_login.class);
+        startActivity(intent);
+        finish();
     }
 }
