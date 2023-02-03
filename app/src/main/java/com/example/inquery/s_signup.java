@@ -79,4 +79,12 @@ public class s_signup extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(s_signup.this, s_login.class);
+        startActivity(intent);
+        finish();
+    }
 }

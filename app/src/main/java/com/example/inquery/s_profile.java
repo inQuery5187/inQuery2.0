@@ -49,8 +49,8 @@ public class s_profile extends AppCompatActivity implements NavigationView.OnNav
         name= findViewById(R.id.backgroundtop);
         query= findViewById(R.id.querybox);
         query.setVisibility(View.INVISIBLE);
-        reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty");
-        reference.child("2021b1541083").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        reference= FirebaseDatabase.getInstance().getReference("Data").child("Student");
+        reference.child("2021B1541083").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
@@ -124,19 +124,29 @@ public class s_profile extends AppCompatActivity implements NavigationView.OnNav
     private void navHome() {
         Intent intent= new Intent(this, s_home.class);
         startActivity(intent);
+        finish();
     }
     private void navProfile() {
         Intent intent= new Intent(this, s_profile.class);
         startActivity(intent);
+        finish();
     }
     private void navQueries() {
         Intent intents= new Intent(this, queries.class);
         startActivity(intents);
+        finish();
     }
     private void navSettings() {
     }
     private void setNavigationViewListener() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(s_profile.this, s_home.class);
+        startActivity(intent);
+        finish();
     }
 }

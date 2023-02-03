@@ -19,16 +19,16 @@ import com.google.firebase.database.FirebaseDatabase;
 public class f_profile extends AppCompatActivity {
     DatabaseReference reference;
     TextView userId, name;
-    Button querybox;
+    Button requests;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fprofile);
         userId= findViewById(R.id.userId);
         name= findViewById(R.id.backgroundtop);
-        querybox=findViewById(R.id.querybox);
+        requests=findViewById(R.id.requests);
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty");
-        reference.child("2021b1541083").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        reference.child("1234").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
@@ -45,12 +45,19 @@ public class f_profile extends AppCompatActivity {
             }
 
         });
-        querybox.setOnClickListener(new View.OnClickListener() {
+        requests.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(f_profile.this, queries.class);
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(f_profile.this, f_login.class);
+        startActivity(intent);
+        finish();
     }
 }
