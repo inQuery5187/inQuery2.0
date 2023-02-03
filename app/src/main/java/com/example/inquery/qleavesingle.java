@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,11 +18,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
-public class qleavesingle extends AppCompatActivity {
-    TextView teachersel;
+public class qleavesingle extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+    TextView teachersel, singleDate;
     DatabaseReference reference;
+    ImageView btPickDate;
     String[] listItems;
     boolean[] checkedItems;
     ArrayList<Integer> mUserItems= new ArrayList<Integer>();
@@ -30,7 +35,18 @@ public class qleavesingle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qleavesingle);
-        teachersel= findViewById(R.id.spinner);
+        teachersel = findViewById(R.id.spinnerReciever);
+        btPickDate = findViewById(R.id.btPickDate);
+        singleDate = findViewById(R.id.fromDate);
+        btPickDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                com.example.inquery.DatePicker mDatePickerDialogFragment;
+                mDatePickerDialogFragment = new com.example.inquery.DatePicker();
+                mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE PICK");
+            }
+        });
+
         reference= FirebaseDatabase.getInstance().getReference("Data");
         reference.child("Faculty").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -115,5 +131,15 @@ public class qleavesingle extends AppCompatActivity {
         }
         String[] x= {};
         return arr3.toArray(x);
+    }
+
+    @Override
+    public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar mCalendar = Calendar.getInstance();
+        mCalendar.set(Calendar.YEAR, year);
+        mCalendar.set(Calendar.MONTH, month);
+        mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(mCalendar.getTime());
+        singleDate.setText(selectedDate);
     }
 }

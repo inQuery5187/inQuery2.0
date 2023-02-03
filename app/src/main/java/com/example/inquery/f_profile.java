@@ -19,16 +19,16 @@ import com.google.firebase.database.FirebaseDatabase;
 public class f_profile extends AppCompatActivity {
     DatabaseReference reference;
     TextView userId, name;
-    Button requests;
+    Button querybox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fprofile);
         userId= findViewById(R.id.userId);
-        name= findViewById(R.id.backgroundtop);
-        requests=findViewById(R.id.requests);
+        name= findViewById(R.id.userName);
+        querybox=findViewById(R.id.requests);
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty");
-        reference.child("1234").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        reference.child("2021b1541083").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
@@ -45,7 +45,7 @@ public class f_profile extends AppCompatActivity {
             }
 
         });
-        requests.setOnClickListener(new View.OnClickListener() {
+        querybox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(f_profile.this, queries.class);

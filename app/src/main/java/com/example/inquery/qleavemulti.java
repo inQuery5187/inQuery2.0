@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,11 +19,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
-public class qleavemulti extends AppCompatActivity {
-    TextView teachersel;
+public class qleavemulti extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+    TextView teachersel, fromDate, toDate;
     DatabaseReference reference;
+    ImageView btFromDate, btToDate;
     String[] listItems;
     boolean[] checkedItems;
     ArrayList<Integer> mUserItems= new ArrayList<Integer>();
@@ -30,7 +36,27 @@ public class qleavemulti extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qleavemulti);
-        teachersel= findViewById(R.id.spinner);
+        teachersel = findViewById(R.id.spinnerReciever);
+        btFromDate = findViewById(R.id.btFromDate);
+        btToDate = findViewById(R.id.btToDate);
+        fromDate = findViewById(R.id.fromDate);
+        toDate = findViewById(R.id.toDate);
+        btFromDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                com.example.inquery.DatePicker mDatePickerDialogFragmentFrom;
+                mDatePickerDialogFragmentFrom = new com.example.inquery.DatePicker();
+                mDatePickerDialogFragmentFrom.show(getSupportFragmentManager(), "DATE PICK");
+            }
+        });
+        btToDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                com.example.inquery.DatePicker mDatePickerDialogFragmentTo;
+                mDatePickerDialogFragmentTo = new com.example.inquery.DatePicker();
+                mDatePickerDialogFragmentTo.show(getSupportFragmentManager(), "DATE PICK");
+            }
+        });
         reference= FirebaseDatabase.getInstance().getReference("Data");
         reference.child("Faculty").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -115,5 +141,15 @@ public class qleavemulti extends AppCompatActivity {
         }
         String[] x= {};
         return arr3.toArray(x);
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar mCalendar = Calendar.getInstance();
+        mCalendar.set(Calendar.YEAR, year);
+        mCalendar.set(Calendar.MONTH, month);
+        mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(mCalendar.getTime());
+        fromDate.setText(selectedDate);
     }
 }
