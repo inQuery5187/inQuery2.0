@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/submit_button" />
 
     <ImageView
-        android:id="@+id/backgroundtop"
+        android:id="@+id/userName"
         android:layout_width="0dp"
         android:layout_height="85dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,8 +35,8 @@
         android:textColor="#6B5DB1"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundtop"
-        app:layout_constraintEnd_toEndOf="@+id/backgroundtop"
+        app:layout_constraintBottom_toBottomOf="@+id/userName"
+        app:layout_constraintEnd_toEndOf="@+id/userName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

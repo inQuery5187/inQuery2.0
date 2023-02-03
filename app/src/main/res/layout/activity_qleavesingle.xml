@@ -19,16 +19,16 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/btPickDate" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/fromDate"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/montserrat"
-        android:text="Date: "
+        android:text="Select Date"
         android:textColor="#6B5DB1"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -56,7 +56,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReciever" />
 
     <TextView
         android:id="@+id/textView5"
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/inputReason"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="120dp"
@@ -83,11 +83,11 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReciever"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerReciever"
         android:text="Choose Reciever: "
         android:textColor="#6B5DB1"
         android:textSize="18sp"
@@ -100,26 +100,23 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:srcCompat="@drawable/submit_button" />
+
+    <ImageView
+        android:id="@+id/btPickDate"
+        android:layout_width="42dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fromDate"
+        app:srcCompat="@drawable/calendar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,6 +51,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".f_requests"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".qcomplaint"
             android:exported="false">
             <meta-data
