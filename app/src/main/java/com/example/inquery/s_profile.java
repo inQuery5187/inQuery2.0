@@ -48,7 +48,7 @@ public class s_profile extends AppCompatActivity implements NavigationView.OnNav
         userId= findViewById(R.id.userId);
         name= findViewById(R.id.userName);
         query= findViewById(R.id.querybox);
-        query.setVisibility(View.INVISIBLE);
+
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Student");
         reference.child("2021B1541083").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -74,6 +74,14 @@ public class s_profile extends AppCompatActivity implements NavigationView.OnNav
 //                finish();
 //            }
 //        });
+        query.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(s_profile.this, sprofileedit.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
