@@ -153,7 +153,7 @@
             <!--        app:layout_constraintVertical_bias="0.428" />-->
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/fromDate"
                 android:layout_width="204dp"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/leavesingle"
