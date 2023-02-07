@@ -15,7 +15,7 @@ public class Fprofile2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fprofile2);
-        name=findViewById(R.id.name);
+        name=findViewById(R.id.rollNo);
         rollno=findViewById(R.id.roll_no);
         branch=findViewById(R.id.branch);
         gender=findViewById(R.id.gender);

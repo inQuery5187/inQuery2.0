@@ -26,7 +26,7 @@ public class s_login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flogin);
-        userId= findViewById(R.id.userId);
+        userId= findViewById(R.id.name);
         userPwd= findViewById(R.id.userPwd);
         signUp= findViewById(R.id.studentBtn);
         login= findViewById(R.id.facultyBtn);
