@@ -7,7 +7,7 @@
     tools:context=".f_signup">
 
     <TextView
-        android:id="@+id/userId"
+        android:id="@+id/name"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginTop="308dp"
@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userId"
+        app:layout_constraintTop_toBottomOf="@+id/name"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView

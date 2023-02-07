@@ -22,7 +22,7 @@ public class f_signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fsignup);
         name= findViewById(R.id.userName);
-        userID= findViewById(R.id.userId);
+        userID= findViewById(R.id.name);
         userPwd= findViewById(R.id.userPwd);
         cpwd= findViewById(R.id.cpwd);
         submit= findViewById(R.id.signUP);
