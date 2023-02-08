@@ -46,7 +46,7 @@ public class s_profile extends AppCompatActivity implements NavigationView.OnNav
         // to make the Navigation drawer icon always appear on the action bar
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         userId = findViewById(R.id.userId);
-        name = findViewById(R.id.userName);
+        name = findViewById(R.id.name);
         //query = findViewById(R.id.querybox);
 
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Student");
