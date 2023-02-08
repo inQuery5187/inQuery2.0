@@ -48,7 +48,7 @@ public class f_profile extends AppCompatActivity {
         querybox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(f_profile.this, queries.class);
+                Intent intent= new Intent(f_profile.this, f_requests.class);
                 startActivity(intent);
             }
         });
