@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/inputReason"
+        android:id="@+id/rreason"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="120dp"
@@ -83,11 +83,11 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2"
+        app:layout_constraintTop_toBottomOf="@+id/rfrom"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine2"
+        android:id="@+id/rfrom"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="120dp"
@@ -99,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerReciever"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <Spinner
+    <TextView
         android:id="@+id/spinnerReciever"
         android:layout_width="300dp"
         android:layout_height="40dp"
@@ -110,7 +110,7 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/csubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="124dp"

@@ -99,7 +99,7 @@
         tools:layout_editor_absoluteY="269dp" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/csubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/setting_box2"
@@ -143,11 +143,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delete my account"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintBottom_toBottomOf="@+id/csubmit"
+        app:layout_constraintEnd_toEndOf="@+id/csubmit"
         app:layout_constraintHorizontal_bias="0.216"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/csubmit"
+        app:layout_constraintTop_toTopOf="@+id/csubmit"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
