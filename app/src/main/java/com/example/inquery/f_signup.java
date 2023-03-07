@@ -21,7 +21,7 @@ public class f_signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fsignup);
-        name= findViewById(R.id.userName);
+        name= findViewById(R.id.epf_background);
         userID= findViewById(R.id.name);
         userPwd= findViewById(R.id.userPwd);
         cpwd= findViewById(R.id.cpwd);

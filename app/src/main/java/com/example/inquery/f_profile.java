@@ -25,7 +25,7 @@ public class f_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fprofile);
         userId= findViewById(R.id.name);
-        name= findViewById(R.id.userName);
+        name= findViewById(R.id.epf_background);
         querybox=findViewById(R.id.requests);
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty");
         reference.child("2021b1541083").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {

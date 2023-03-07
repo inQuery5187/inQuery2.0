@@ -36,93 +36,118 @@
         app:srcCompat="@drawable/backgroundtop" />
 
     <EditText
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
+        android:id="@+id/faculty_id"
+        android:layout_width="350dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/et_background"
+        android:drawablePadding="25dp"
         android:fontFamily="@font/montserrat"
+        android:hint="University Roll No."
+        android:paddingLeft="20dp"
         android:paddingRight="10dp"
-        android:text="University Roll No. :"
-        android:textColor="#6B5DB1"
+        android:textColorHint="#7268A6"
+        android:textColor="#7268A6"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <EditText
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
+        android:id="@+id/userName"
+        android:layout_width="350dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="60dp"
+        android:background="@drawable/et_background"
+        android:drawablePadding="25dp"
         android:fontFamily="@font/montserrat"
+        android:hint="Full Name"
+        android:paddingLeft="20dp"
         android:paddingRight="10dp"
-        android:text="nameKistring"
-        android:textColor="#6B5DB1"
+        android:textColorHint="#7268A6"
+        android:textColor="#7268A6"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <EditText
         android:id="@+id/textView18"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/et_background"
+        android:drawablePadding="25dp"
         android:fontFamily="@font/montserrat"
-        android:text="Admission No. :"
-        android:textColor="#6B5DB1"
+        android:hint="Admission No."
+        android:paddingLeft="20dp"
+        android:textColorHint="#7268A6"
+        android:textColor="#7268A6"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/faculty_id" />
 
     <EditText
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
+        android:id="@+id/department"
+        android:layout_width="350dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/et_background"
+        android:drawablePadding="25dp"
         android:fontFamily="@font/montserrat"
-        android:text="Branch"
-        android:textColor="#6B5DB1"
+        android:hint="Branch"
+        android:paddingLeft="20dp"
+        android:textColorHint="#7268A6"
+        android:textColor="#7268A6"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <EditText
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
+        android:id="@+id/phone_no"
+        android:layout_width="350dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/et_background"
+        android:drawablePadding="25dp"
         android:fontFamily="@font/montserrat"
-        android:text="Phone No. :"
-        android:textColor="#6B5DB1"
+        android:hint="Phone No."
+        android:paddingLeft="20dp"
+        android:textColorHint="#7268A6"
+        android:textColor="#7268A6"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/department" />
 
     <EditText
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+        android:id="@+id/email"
+        android:layout_width="350dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/et_background"
+        android:drawablePadding="25dp"
         android:fontFamily="@font/montserrat"
-        android:text="Email :"
-        android:textColor="#6B5DB1"
+        android:hint="Email"
+        android:paddingLeft="20dp"
+        android:textColorHint="#7268A6"
+        android:textColor="#7268A6"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        app:layout_constraintTop_toBottomOf="@+id/phone_no" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/email"
         app:srcCompat="@drawable/submit_button" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
