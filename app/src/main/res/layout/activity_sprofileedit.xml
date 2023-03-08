@@ -147,7 +147,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
-        app:srcCompat="@drawable/submit_button" />
+        app:srcCompat="@drawable/button_medium" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="@+id/submit"
+        app:layout_constraintStart_toStartOf="@+id/submit"
+        app:layout_constraintTop_toTopOf="@+id/submit" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

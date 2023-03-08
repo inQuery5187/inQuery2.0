@@ -31,11 +31,11 @@ public class f_requests extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frequests);
-        from= findViewById(R.id.rfrom);
-        against= findViewById(R.id.ragainst);
-        reason= findViewById(R.id.rreason);
-        approve= findViewById(R.id.rapprove);
-        reject= findViewById(R.id.rreject);
+        //from= findViewById(R.id.rfrom);
+        //against= findViewById(R.id.ragainst);
+        //reason= findViewById(R.id.rreason);
+        //approve= findViewById(R.id.rapprove);
+       // reject= findViewById(R.id.rreject);
         from.setEnabled(false);
         against.setEnabled(false);
         reason.setEnabled(false);

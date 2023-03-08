@@ -2,101 +2,140 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/design_default_color_background"
     android:id="@+id/color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/design_default_color_background"
     tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/facultyBtn"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="88dp"
-        android:background="#9EA1E4"
-        android:fontFamily="@font/montserrat"
-        android:text="@string/log_in"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.943"
-        tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/studentBtn"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:background="#6200ED"
-        android:fontFamily="@font/montserrat"
-        android:text="@string/sign_up"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="350dp"
-        android:layout_height="439dp"
-        android:contentDescription="@string/logomain"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="260dp"
         android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/et_background_rounded"
+        android:drawableRight="@drawable/icon_profile"
+        android:drawablePadding="25dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="@string/username"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColorHint="#7268A6"
-        android:textColor="#7268A6"
-        android:background="@drawable/et_background_rounded"
-        android:drawableRight="@drawable/icon_profile"
-        android:drawablePadding="25dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#7268A6"
+        android:textColorHint="#7268A6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <EditText
         android:id="@+id/userPwd"
         android:layout_width="260dp"
         android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/et_background_rounded"
+        android:drawableRight="@drawable/icon_visible"
+        android:drawablePadding="25dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="@string/password"
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:textColorHint="#7268A6"
-        android:textColor="#7268A6"
-        android:background="@drawable/et_background_rounded"
-        android:drawableRight="@drawable/icon_visible"
-        android:drawablePadding="25dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#7268A6"
+        android:textColorHint="#7268A6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="194dp"
+        android:layout_height="319dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727" />
+        app:srcCompat="@drawable/logo_main" />
+
+    <ImageView
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userPwd"
+        app:srcCompat="@drawable/button_medium" />
+
+    <ImageView
+        android:id="@+id/signupBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgotBtn"
+        app:srcCompat="@drawable/button_medium" />
+
+    <TextView
+        android:id="@+id/forgotBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Forgot Password?"
+        android:textColor="#E85D5D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/forgotBtn"
+        app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/loginBtn"
+        app:layout_constraintTop_toTopOf="@+id/loginBtn"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Sign Up"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/signupBtn"
+        app:layout_constraintEnd_toEndOf="@+id/signupBtn"
+        app:layout_constraintStart_toStartOf="@+id/signupBtn"
+        app:layout_constraintTop_toTopOf="@+id/signupBtn" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Faculty Login"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#7268A5"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

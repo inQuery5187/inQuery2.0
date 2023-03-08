@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class s_login extends AppCompatActivity {
     EditText userId, userPwd;
-    TextView signUp;
-    Button login;
+    ImageView signUp, login;
     DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,8 @@ public class s_login extends AppCompatActivity {
         setContentView(R.layout.activity_flogin);
         userId= findViewById(R.id.name);
         userPwd= findViewById(R.id.userPwd);
-        signUp= findViewById(R.id.studentBtn);
-        login= findViewById(R.id.facultyBtn);
+        signUp= findViewById(R.id.signupBtn);
+        login= findViewById(R.id.loginBtn);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

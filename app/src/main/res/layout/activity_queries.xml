@@ -154,15 +154,15 @@
 
             <TextView
                 android:id="@+id/fromDate"
-                android:layout_width="204dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/leavesingle"
                 android:layout_alignTop="@+id/leavesingle"
                 android:layout_alignEnd="@+id/leavesingle"
                 android:layout_alignBottom="@+id/leavesingle"
                 android:layout_marginStart="43dp"
-                android:layout_marginEnd="43dp"
                 android:layout_marginTop="17.5dp"
+                android:layout_marginEnd="43dp"
                 android:layout_marginBottom="17.5dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
@@ -178,7 +178,7 @@
 
             <TextView
                 android:id="@+id/textView9"
-                android:layout_width="196dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/leavemulti"
                 android:layout_alignTop="@+id/leavemulti"
@@ -188,9 +188,9 @@
                 android:layout_marginTop="17.5dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginBottom="17.5dp"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Leave (multi day)"
-                android:fontFamily="@font/montserrat"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/leavemulti"

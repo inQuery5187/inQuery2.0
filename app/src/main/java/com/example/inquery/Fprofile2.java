@@ -14,7 +14,7 @@ public class Fprofile2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fprofile2);
+        setContentView(R.layout.activity_fprofileedit);
         name=findViewById(R.id.userName);
         facultyid=findViewById(R.id.faculty_id);
         dept=findViewById(R.id.department);

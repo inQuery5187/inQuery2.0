@@ -69,13 +69,25 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/cusubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="124dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/submit_button" />
+        app:srcCompat="@drawable/button_medium" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/cusubmit"
+        app:layout_constraintEnd_toEndOf="@+id/cusubmit"
+        app:layout_constraintStart_toStartOf="@+id/cusubmit"
+        app:layout_constraintTop_toTopOf="@+id/cusubmit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

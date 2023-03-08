@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import java.util.regex.*;
 
@@ -15,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class s_signup extends AppCompatActivity {
     EditText name, userID, userPwd, cpwd;
-    Button submit;
+    ImageView submit;
     DatabaseReference reference;
     Data Data;
     public static boolean isValidPassword(String password){
@@ -38,7 +39,7 @@ public class s_signup extends AppCompatActivity {
         userID= findViewById(R.id.name);
         userPwd= findViewById(R.id.userPwd);
         cpwd= findViewById(R.id.cpwd);
-        submit= findViewById(R.id.signUP);
+        submit= findViewById(R.id.signUp);
         Data=new Data();
         reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Student");
         submit.setOnClickListener(new View.OnClickListener(){
