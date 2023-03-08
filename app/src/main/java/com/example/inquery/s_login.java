@@ -37,7 +37,7 @@ public class s_login extends AppCompatActivity {
                 String ID= userId.getText().toString();
                 String pwd= userPwd.getText().toString();
                 //if id and pwd exists in database login
-                reference= FirebaseDatabase.getInstance().getReference("Data").child("Student");
+                reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users");
                 reference.child(ID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {

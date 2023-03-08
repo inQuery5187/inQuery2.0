@@ -29,6 +29,7 @@ public class qleavemulti extends AppCompatActivity implements DatePickerDialog.O
     ImageView btFromDate, btToDate;
     String[] listItems;
     boolean[] checkedItems;
+    int count;
     ArrayList<Integer> mUserItems= new ArrayList<Integer>();
     ArrayList<String> nameArr= new ArrayList<String>();
     ArrayList<String> userArr= new ArrayList<String>();
@@ -41,12 +42,16 @@ public class qleavemulti extends AppCompatActivity implements DatePickerDialog.O
         btToDate = findViewById(R.id.btToDate);
         fromDate = findViewById(R.id.fromDate);
         toDate = findViewById(R.id.toDate);
+
         btFromDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 com.example.inquery.DatePicker mDatePickerDialogFragmentFrom;
                 mDatePickerDialogFragmentFrom = new com.example.inquery.DatePicker();
+                count= 1;
                 mDatePickerDialogFragmentFrom.show(getSupportFragmentManager(), "DATE PICK");
+
+
             }
         });
         btToDate.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +59,9 @@ public class qleavemulti extends AppCompatActivity implements DatePickerDialog.O
             public void onClick(View view) {
                 com.example.inquery.DatePicker mDatePickerDialogFragmentTo;
                 mDatePickerDialogFragmentTo = new com.example.inquery.DatePicker();
+                count= 2;
                 mDatePickerDialogFragmentTo.show(getSupportFragmentManager(), "DATE PICK");
+
             }
         });
         reference= FirebaseDatabase.getInstance().getReference("Data");
@@ -130,7 +137,7 @@ public class qleavemulti extends AppCompatActivity implements DatePickerDialog.O
                 AlertDialog mdialog = mbuilder.create();
                 mdialog.show();
             }
-        });
+        }); 
 
     }
     private String[] getValue(){
@@ -150,6 +157,12 @@ public class qleavemulti extends AppCompatActivity implements DatePickerDialog.O
         mCalendar.set(Calendar.MONTH, month);
         mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(mCalendar.getTime());
-        fromDate.setText(selectedDate);
+        if(count==1){
+            fromDate.setText(selectedDate);
+        }
+        if(count==2){
+            toDate.setText(selectedDate);
+        }
+
     }
 }
