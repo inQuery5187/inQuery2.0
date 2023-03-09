@@ -65,7 +65,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                app:srcCompat="@drawable/rectangular_button" />
+                app:srcCompat="@drawable/button_queries" />
 
             <!--<ImageView
                 android:id="@+id/leavemulti"
@@ -94,7 +94,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/leave"
-                app:srcCompat="@drawable/rectangular_button" />
+                app:srcCompat="@drawable/button_queries" />
 
             <ImageView
                 android:id="@+id/miscon"
@@ -109,7 +109,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/complaint"
-                app:srcCompat="@drawable/rectangular_button" />
+                app:srcCompat="@drawable/button_queries" />
 
             <ImageView
                 android:id="@+id/custom"
@@ -125,7 +125,7 @@
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/miscon"
-                app:srcCompat="@drawable/rectangular_button" />
+                app:srcCompat="@drawable/button_queries" />
 
             <TextView
                 android:id="@+id/fromDate"

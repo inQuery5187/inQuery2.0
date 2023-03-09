@@ -38,6 +38,7 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
         leavesingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                leavesingle.setImageResource(R.drawable.button_queries_dark);
                 Intent intent= new Intent(queries.this, qleave.class);
                 startActivity(intent);
             }
@@ -52,6 +53,7 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
         complaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                complaint.setImageResource(R.drawable.button_queries_dark);
                 Intent intent= new Intent(queries.this, qcomplaint.class);
                 startActivity(intent);
             }
@@ -59,6 +61,7 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
         custom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                custom.setImageResource(R.drawable.button_queries_dark);
                 Intent intent= new Intent(queries.this, qcustom.class);
                 startActivity(intent);
             }
@@ -66,6 +69,7 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
         miscon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                miscon.setImageResource(R.drawable.button_queries_dark);
                 Intent intent= new Intent(queries.this, qmisconduct.class);
                 startActivity(intent);
             }
