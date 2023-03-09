@@ -102,9 +102,7 @@ public class s_signup extends AppCompatActivity {
                     final Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
-                        public void run() {
-                            submit.setImageResource(R.drawable.button_medium);
-                        }
+                        public void run() { submit.setImageResource(R.drawable.button_medium);}
                     }, 800);
                 }
             }
