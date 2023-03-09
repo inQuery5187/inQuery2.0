@@ -34,6 +34,7 @@ public class s_login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                login.setImageResource(R.drawable.button_medium_dark);
                 String ID= userId.getText().toString();
                 String pwd= userPwd.getText().toString();
                 //if id and pwd exists in database login
@@ -43,15 +44,16 @@ public class s_login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if(task.isSuccessful()){
                             if(task.getResult().exists()){
-
                                 DataSnapshot dataSnapshot= task.getResult();
                                 String pwdChk= String.valueOf(dataSnapshot.child("pwd").getValue());
                                 if(pwdChk.equals(pwd)){
-
                                     Toast.makeText(s_login.this, "Logged in using Password!", Toast.LENGTH_SHORT).show();
                                     Intent extraIntent = new Intent(s_login.this, s_home.class);
                                     startActivity(extraIntent);
                                     finish();
+                                }else{
+                                    Toast.makeText(s_login.this, "incorrect password", Toast.LENGTH_SHORT).show();
+                                    login.setImageResource(R.drawable.button_medium);
                                 }
                             }
                         }
@@ -62,6 +64,7 @@ public class s_login extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                signUp.setImageResource(R.drawable.button_medium_dark);
                 Intent intent= new Intent(s_login.this, s_signup.class);
                 startActivity(intent);
             }

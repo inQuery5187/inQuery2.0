@@ -26,9 +26,9 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
         setContentView(R.layout.activity_queries);
         setNavigationViewListener();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
-        leavesingle=findViewById(R.id.leavesingle);
+        leavesingle=findViewById(R.id.leave);
 //        doc=findViewById(R.id.doc);
-        leavemulti=findViewById(R.id.leavemulti);
+        //leavemulti=findViewById(R.id.leavemulti);
         complaint=findViewById(R.id.complaint);
         miscon=findViewById(R.id.miscon);
         custom=findViewById(R.id.custom);
@@ -38,17 +38,17 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
         leavesingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(queries.this, qleavesingle.class);
+                Intent intent= new Intent(queries.this, qleave.class);
                 startActivity(intent);
             }
         });
-        leavemulti.setOnClickListener(new View.OnClickListener() {
+        /*leavemulti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(queries.this, qleavemulti.class);
                 startActivity(intent);
             }
-        });
+        });*/
         complaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -25,6 +25,7 @@ public class Fprofile2 extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                submit.setImageResource(R.drawable.button_medium_dark);
                 String n=name.getText().toString();
                 String r=facultyid.getText().toString();
                 String b=dept.getText().toString();

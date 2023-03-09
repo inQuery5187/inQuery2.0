@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +46,7 @@ public class s_signup extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                submit.setImageResource(R.drawable.button_medium_dark);
                 String nam = name.getText().toString().trim();
                 String usernam = userID.getText().toString().trim();
                 String p= userPwd.getText().toString();
@@ -56,26 +58,54 @@ public class s_signup extends AppCompatActivity {
                                 Data.setName(nam);
                                 Data.setUsername(usernam);
                                 Data.setPwd(p);
-                                reference.child(userID.getText().toString().trim()).setValue(Data);
-                                Toast.makeText(s_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
+                                reference.child("users").child(userID.getText().toString().trim()).setValue(Data);
+                                Toast.makeText(s_signup.this, "You have been registered", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(s_signup.this, s_login.class);
                                 startActivity(intent);
                                 finish();
                             }
                             else{
                                 Toast.makeText(s_signup.this, "password and repeat password don't match", Toast.LENGTH_SHORT).show();
+                                final Handler handler = new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        submit.setImageResource(R.drawable.button_medium);
+                                    }
+                                }, 800);
                             }
                         }
                         else{
                             Toast.makeText(s_signup.this, "Please enter a valid password", Toast.LENGTH_SHORT).show();
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    submit.setImageResource(R.drawable.button_medium);
+                                }
+                            }, 800);
                         }
                     }
                     else {
                         Toast.makeText(s_signup.this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                submit.setImageResource(R.drawable.button_medium);
+                            }
+                        }, 800);
                     }
                 }
                 else{
                     Toast.makeText(s_signup.this, "Please enter your correct ID no.", Toast.LENGTH_SHORT).show();
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            submit.setImageResource(R.drawable.button_medium);
+                        }
+                    }, 800);
                 }
             }
         });

@@ -17,17 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--    <ImageView-->
-            <!--        android:id="@+id/doc"-->
-            <!--        android:layout_width="wrap_content"-->
-            <!--        android:layout_height="wrap_content"-->
-            <!--        android:layout_marginTop="16dp"-->
-            <!--        app:layout_constraintEnd_toEndOf="parent"-->
-            <!--        app:layout_constraintHorizontal_bias="0.497"-->
-            <!--        app:layout_constraintStart_toStartOf="parent"-->
-            <!--        app:layout_constraintTop_toBottomOf="@+id/leave"-->
-            <!--        app:srcCompat="@drawable/rectangular_button" />-->
-
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
@@ -48,9 +37,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="137dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="23dp"
-                android:layout_marginEnd="135dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
@@ -64,25 +53,25 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/leavesingle"
+                android:id="@+id/leave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="59dp"
-                android:layout_marginTop="182dp"
+                android:layout_marginTop="179dp"
                 android:layout_marginEnd="62dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2"
                 app:srcCompat="@drawable/rectangular_button" />
 
-            <ImageView
+            <!--<ImageView
                 android:id="@+id/leavemulti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/leavesingle"
+                android:layout_below="@+id/leave"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="61dp"
@@ -90,13 +79,13 @@
                 android:layout_marginEnd="61dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/rectangular_button" />
+                app:srcCompat="@drawable/rectangular_button" />-->
 
             <ImageView
                 android:id="@+id/complaint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/leavemulti"
+                android:layout_below="@+id/leave"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="61dp"
@@ -104,7 +93,7 @@
                 android:layout_marginEnd="61dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/leavemulti"
+                app:layout_constraintTop_toBottomOf="@+id/leave"
                 app:srcCompat="@drawable/rectangular_button" />
 
             <ImageView
@@ -138,45 +127,29 @@
                 app:layout_constraintTop_toBottomOf="@+id/miscon"
                 app:srcCompat="@drawable/rectangular_button" />
 
-            <!--    <TextView-->
-            <!--        android:id="@+id/textView8"-->
-            <!--        android:layout_width="wrap_content"-->
-            <!--        android:layout_height="wrap_content"-->
-            <!--        android:text="Documention"-->
-            <!--        android:textSize="20sp"-->
-            <!--        android:textStyle="bold"-->
-            <!--        app:layout_constraintBottom_toBottomOf="@+id/doc"-->
-            <!--        app:layout_constraintEnd_toEndOf="@+id/doc"-->
-            <!--        app:layout_constraintHorizontal_bias="0.167"-->
-            <!--        app:layout_constraintStart_toStartOf="@+id/doc"-->
-            <!--        app:layout_constraintTop_toTopOf="@+id/doc"-->
-            <!--        app:layout_constraintVertical_bias="0.428" />-->
-
             <TextView
                 android:id="@+id/fromDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/leavesingle"
-                android:layout_alignTop="@+id/leavesingle"
-                android:layout_alignEnd="@+id/leavesingle"
-                android:layout_alignBottom="@+id/leavesingle"
-                android:layout_marginStart="43dp"
-                android:layout_marginTop="17.5dp"
-                android:layout_marginEnd="43dp"
-                android:layout_marginBottom="17.5dp"
+                android:layout_alignStart="@+id/leave"
+                android:layout_alignTop="@+id/leave"
+                android:layout_alignEnd="@+id/leave"
+                android:layout_alignBottom="@+id/leave"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
-                android:text="Leave (single day)"
+                android:text="Leave"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/leavesingle"
-                app:layout_constraintEnd_toEndOf="@+id/leavesingle"
+                app:layout_constraintBottom_toBottomOf="@+id/leave"
+                app:layout_constraintEnd_toEndOf="@+id/leave"
                 app:layout_constraintHorizontal_bias="0.22"
-                app:layout_constraintStart_toStartOf="@+id/leavesingle"
-                app:layout_constraintTop_toTopOf="@+id/leavesingle"
+                app:layout_constraintStart_toStartOf="@+id/leave"
+                app:layout_constraintTop_toTopOf="@+id/leave"
                 app:layout_constraintVertical_bias="0.514" />
 
-            <TextView
+           <!-- <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -184,9 +157,9 @@
                 android:layout_alignTop="@+id/leavemulti"
                 android:layout_alignEnd="@+id/leavemulti"
                 android:layout_alignBottom="@+id/leavemulti"
-                android:layout_marginStart="48dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="17.5dp"
-                android:layout_marginEnd="48dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="17.5dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
@@ -198,7 +171,7 @@
                 app:layout_constraintHorizontal_bias="0.16"
                 app:layout_constraintStart_toStartOf="@+id/leavemulti"
                 app:layout_constraintTop_toTopOf="@+id/leavemulti"
-                app:layout_constraintVertical_bias="0.342" />
+                app:layout_constraintVertical_bias="0.342" />-->
 
             <TextView
                 android:id="@+id/textView10"
@@ -208,12 +181,10 @@
                 android:layout_alignTop="@+id/complaint"
                 android:layout_alignEnd="@+id/complaint"
                 android:layout_alignBottom="@+id/complaint"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="17.5dp"
-                android:layout_marginEnd="64dp"
-                android:layout_marginBottom="17.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:gravity="center"
-                android:text="Complaints"
+                android:text="Complaint"
                 android:textSize="20sp"
                 android:fontFamily="@font/montserrat"
                 android:textStyle="bold"
@@ -231,10 +202,8 @@
                 android:layout_alignTop="@+id/miscon"
                 android:layout_alignEnd="@+id/miscon"
                 android:layout_alignBottom="@+id/miscon"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="17.5dp"
-                android:layout_marginEnd="64dp"
-                android:layout_marginBottom="17.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:gravity="center"
                 android:text="Misconduct"
                 android:textSize="20sp"
@@ -255,10 +224,8 @@
                 android:layout_alignTop="@+id/custom"
                 android:layout_alignEnd="@+id/custom"
                 android:layout_alignBottom="@+id/custom"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="17.5dp"
-                android:layout_marginEnd="64dp"
-                android:layout_marginBottom="17.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:gravity="center"
                 android:text="Custom Query"
                 android:textSize="20sp"

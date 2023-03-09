@@ -36,6 +36,7 @@ public class f_login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                login.setImageResource(R.drawable.button_medium_dark);
                 String ID= userId.getText().toString();
                 String pwd= userPwd.getText().toString();
                 //if id and pwd exists in database login
@@ -54,6 +55,9 @@ public class f_login extends AppCompatActivity {
                                     Intent extraIntent = new Intent(f_login.this, f_profile.class);
                                     startActivity(extraIntent);
                                     finish();
+                                }else{
+                                    Toast.makeText(f_login.this, "incorrect password", Toast.LENGTH_SHORT).show();
+                                    login.setImageResource(R.drawable.button_medium);
                                 }
                             }
                         }
@@ -67,6 +71,7 @@ public class f_login extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                signUp.setImageResource(R.drawable.button_medium_dark);
                 Intent intent= new Intent(f_login.this, f_signup.class);
                 startActivity(intent);
             }

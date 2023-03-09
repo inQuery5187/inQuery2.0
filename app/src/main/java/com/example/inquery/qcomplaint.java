@@ -45,6 +45,7 @@ public class qcomplaint extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                submit.setImageResource(R.drawable.button_medium_dark);
                 valAgainst= against.getText().toString().trim();
                 valReason= reason.getText().toString().trim();
                 db.child("complaints").child("against").setValue(valAgainst);

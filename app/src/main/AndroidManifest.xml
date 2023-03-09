@@ -21,7 +21,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".qleavesingle"
+            android:name=".qleave"
             android:exported="false"
             android:label="@string/title_activity_qleavesingle"
             android:theme="@style/Theme.InQuery.NoActionBar">

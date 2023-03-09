@@ -35,7 +35,7 @@ public class f_signup extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-
+                submit.setImageResource(R.drawable.button_medium_dark);
                 String nam = name.getText().toString().trim();
                 String usernam = userID.getText().toString().trim();
                 String p = userPwd.getText().toString();

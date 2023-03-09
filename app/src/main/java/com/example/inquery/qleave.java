@@ -22,7 +22,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class qleavesingle extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class qleave extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     TextView teachersel, singleDate;
     DatabaseReference reference;
     ImageView btPickDate;
@@ -67,7 +67,7 @@ public class qleavesingle extends AppCompatActivity implements DatePickerDialog.
         teachersel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder mbuilder = new AlertDialog.Builder(qleavesingle.this);
+                AlertDialog.Builder mbuilder = new AlertDialog.Builder(qleave.this);
                 mbuilder.setTitle("select the receiver");
                 String[] x= new String[nameArr.size()];
                 mbuilder.setMultiChoiceItems(listItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
