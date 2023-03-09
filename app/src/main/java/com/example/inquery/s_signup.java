@@ -42,7 +42,7 @@ public class s_signup extends AppCompatActivity {
         cpwd= findViewById(R.id.cpwd);
         submit= findViewById(R.id.signUp);
         Data=new Data();
-        reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Student");
+        reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Student").child("users");
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -58,7 +58,7 @@ public class s_signup extends AppCompatActivity {
                                 Data.setName(nam);
                                 Data.setUsername(usernam);
                                 Data.setPwd(p);
-                                reference.child("users").child(userID.getText().toString().trim()).setValue(Data);
+                                reference.child(userID.getText().toString().trim()).setValue(Data);
                                 Toast.makeText(s_signup.this, "You have been registered", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(s_signup.this, s_login.class);
                                 startActivity(intent);

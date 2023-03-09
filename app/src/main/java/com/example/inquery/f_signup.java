@@ -31,7 +31,7 @@ public class f_signup extends AppCompatActivity {
         submit= findViewById(R.id.signUp);
         Data=new Data();
         int i=1;
-        reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Faculty");
+        reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Faculty").child("users");
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
