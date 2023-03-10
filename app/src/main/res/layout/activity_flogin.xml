@@ -1,141 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_background"
-    tools:context=".MainActivity">
+    tools:context=".f_login">
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/et_background_rounded"
-        android:drawableRight="@drawable/icon_profile"
-        android:drawablePadding="25dp"
-        android:ems="10"
-        android:fontFamily="@font/montserrat"
-        android:hint="@string/username"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColor="#7268A6"
-        android:textColorHint="#7268A6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/facultylogin" />
-
-    <EditText
-        android:id="@+id/userPwd"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/et_background_rounded"
-        android:drawableRight="@drawable/icon_visible"
-        android:drawablePadding="25dp"
-        android:ems="10"
-        android:fontFamily="@font/montserrat"
-        android:hint="@string/password"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColor="#7268A6"
-        android:textColorHint="#7268A6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="194dp"
-        android:layout_height="319dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_main" />
-
-    <ImageView
-        android:id="@+id/loginBtn"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/color"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPwd"
-        app:srcCompat="@drawable/button_medium" />
+        android:background="@color/design_default_color_background"
+        tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/signupBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotBtn"
-        app:srcCompat="@drawable/button_medium" />
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="260dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/background_et_rounded"
+            android:drawableRight="@drawable/icon_profile"
+            android:drawablePadding="25dp"
+            android:ems="10"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/username"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#7268A6"
+            android:textColorHint="#7268A6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/facultylogin" />
 
-    <TextView
-        android:id="@+id/forgotBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Forgot Password?"
-        android:textColor="#E85D5D"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+        <EditText
+            android:id="@+id/userPwd"
+            android:layout_width="260dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_et_rounded"
+            android:drawableRight="@drawable/icon_visible"
+            android:drawablePadding="25dp"
+            android:ems="10"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/password"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#7268A6"
+            android:textColorHint="#7268A6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat"
-        android:text="Login"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/forgotBtn"
-        app:layout_constraintEnd_toEndOf="@+id/loginBtn"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/loginBtn"
-        app:layout_constraintTop_toTopOf="@+id/loginBtn"
-        app:layout_constraintVertical_bias="0.3" />
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="194dp"
+            android:layout_height="319dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_main" />
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat"
-        android:text="Sign Up"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/signupBtn"
-        app:layout_constraintEnd_toEndOf="@+id/signupBtn"
-        app:layout_constraintStart_toStartOf="@+id/signupBtn"
-        app:layout_constraintTop_toTopOf="@+id/signupBtn" />
+        <ImageView
+            android:id="@+id/loginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userPwd"
+            app:srcCompat="@drawable/button_medium" />
 
-    <TextView
-        android:id="@+id/facultylogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Faculty Login"
-        android:fontFamily="@font/montserrat"
-        android:textColor="#7268A5"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        <ImageView
+            android:id="@+id/signupBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgotBtn"
+            app:srcCompat="@drawable/button_medium" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/forgotBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Forgot Password?"
+            android:textColor="#E85D5D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Login"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/forgotBtn"
+            app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="@+id/loginBtn"
+            app:layout_constraintTop_toTopOf="@+id/loginBtn"
+            app:layout_constraintVertical_bias="0.3" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Sign Up"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/signupBtn"
+            app:layout_constraintEnd_toEndOf="@+id/signupBtn"
+            app:layout_constraintStart_toStartOf="@+id/signupBtn"
+            app:layout_constraintTop_toTopOf="@+id/signupBtn" />
+
+        <TextView
+            android:id="@+id/facultylogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Faculty Login"
+            android:textColor="#7268A5"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

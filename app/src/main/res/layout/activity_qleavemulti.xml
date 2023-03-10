@@ -70,7 +70,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerReciever" />
+        app:layout_constraintTop_toBottomOf="@+id/receiver" />
 
     <TextView
         android:id="@+id/textView5"
@@ -97,11 +97,11 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerReciever"
+        app:layout_constraintTop_toBottomOf="@+id/receiver"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/spinnerReciever"
+        android:id="@+id/receiver"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="28dp"
