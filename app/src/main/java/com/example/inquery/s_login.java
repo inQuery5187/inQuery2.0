@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,16 +22,18 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class s_login extends AppCompatActivity {
     EditText userId, userPwd;
-    ImageView signUp, login;
+    ImageView signUp, login, pwdsh;
     DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flogin);
+        setContentView(R.layout.activity_slogin);
+        getSupportActionBar().hide();
         userId= findViewById(R.id.name);
         userPwd= findViewById(R.id.userPwd);
         signUp= findViewById(R.id.signupBtn);
         login= findViewById(R.id.loginBtn);
+        pwdsh= findViewById(R.id.pwd_img);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +63,20 @@ public class s_login extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+        pwdsh.setImageResource(R.drawable.icon_notvisible);
+        pwdsh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if((userPwd.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))){
+                    //if pwd is visible hide it
+                    userPwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    pwdsh.setImageResource(R.drawable.icon_notvisible);
+                }else{
+                    userPwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    pwdsh.setImageResource(R.drawable.icon_visible);
+                }
             }
         });
         signUp.setOnClickListener(new View.OnClickListener() {

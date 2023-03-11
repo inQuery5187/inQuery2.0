@@ -39,7 +39,6 @@
         android:textColorHint="#7268A6"
         android:textColor="#7268A6"
         android:background="@drawable/et_background_rounded"
-        android:drawableRight="@drawable/icon_visible"
         android:drawablePadding="25dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -60,7 +59,6 @@
         android:textColorHint="#7268A6"
         android:textColor="#7268A6"
         android:background="@drawable/et_background_rounded"
-        android:drawableRight="@drawable/icon_visible"
         android:drawablePadding="25dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -68,6 +66,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/epf_background"
         tools:ignore="TouchTargetSizeCheck" />
+    <ImageView
+        android:id="@+id/pwd_img"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toBottomOf="@+id/userPwd"
+        app:layout_constraintEnd_toEndOf="@+id/userPwd"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/userPwd"
+        app:layout_constraintTop_toTopOf="@+id/userPwd"
+        app:layout_constraintVertical_bias="0.473" />
+
+    <ImageView
+        android:id="@+id/cpwd_img"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cpwd"
+        app:layout_constraintEnd_toEndOf="@+id/cpwd"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/cpwd"
+        app:layout_constraintTop_toTopOf="@+id/cpwd"
+        app:layout_constraintVertical_bias="0.473" />
 
     <EditText
         android:id="@+id/epf_background"

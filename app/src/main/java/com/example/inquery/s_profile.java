@@ -35,6 +35,9 @@ public class s_profile extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_sprofile);
         setNavigationViewListener();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        // drawer layout instance to toggle the menu icon to open
+        // drawer and back button to close drawer
         drawerLayout = findViewById(R.id.my_drawer_layout1);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
@@ -44,10 +47,7 @@ public class s_profile extends AppCompatActivity implements NavigationView.OnNav
         actionBarDrawerToggle.syncState();
 
         // to make the Navigation drawer icon always appear on the action bar
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        userId = findViewById(R.id.userId);
-        name = findViewById(R.id.name);
-        //query = findViewById(R.id.querybox);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Student");
         reference.child("2021B1541083").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {

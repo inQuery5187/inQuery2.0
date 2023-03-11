@@ -37,7 +37,6 @@
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/et_background_rounded"
-        android:drawableRight="@drawable/icon_visible"
         android:drawablePadding="25dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
@@ -46,12 +45,23 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingRight="25dp"
         android:textColor="#7268A6"
         android:textColorHint="#7268A6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <ImageView
+        android:id="@+id/pwd_img"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toBottomOf="@+id/userPwd"
+        app:layout_constraintEnd_toEndOf="@+id/userPwd"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/userPwd"
+        app:layout_constraintTop_toTopOf="@+id/userPwd"
+        app:layout_constraintVertical_bias="0.473" />
 
     <ImageView
         android:id="@+id/imageView15"

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,9 +19,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class s_signup extends AppCompatActivity {
     EditText name, userID, userPwd, cpwd;
-    ImageView submit;
+    ImageView submit, pwdsh, cpwdsh;
     DatabaseReference reference;
     Data Data;
+
     public static boolean isValidPassword(String password){
         String regex = "^(?=.*[0-9])"
                 + "(?=.*[a-z])(?=.*[A-Z])"
@@ -36,11 +39,15 @@ public class s_signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ssignup);
+        getSupportActionBar().hide();
         name= findViewById(R.id.epf_background);
         userID= findViewById(R.id.name);
         userPwd= findViewById(R.id.userPwd);
         cpwd= findViewById(R.id.cpwd);
         submit= findViewById(R.id.signUp);
+        pwdsh= findViewById(R.id.pwd_img);
+        cpwdsh= findViewById(R.id.cpwd_img);
+
         Data=new Data();
         reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Student").child("users");
         submit.setOnClickListener(new View.OnClickListener(){
@@ -107,6 +114,35 @@ public class s_signup extends AppCompatActivity {
                 }
             }
         });
+        pwdsh.setImageResource(R.drawable.icon_notvisible);
+        pwdsh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if((userPwd.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))){
+                    //if pwd is visible hide it
+                    userPwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    pwdsh.setImageResource(R.drawable.icon_notvisible);
+                }else{
+                    userPwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    pwdsh.setImageResource(R.drawable.icon_visible);
+                }
+            }
+        });
+        cpwdsh.setImageResource(R.drawable.icon_notvisible);
+        cpwdsh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if((cpwd.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))){
+                    //if pwd is visible hide it
+                    cpwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    cpwdsh.setImageResource(R.drawable.icon_notvisible);
+                }else{
+                    cpwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    cpwdsh.setImageResource(R.drawable.icon_visible);
+                }
+            }
+        });
+
     }
 
     @Override
