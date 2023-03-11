@@ -20,8 +20,8 @@
 
     <ImageView
         android:id="@+id/facultyBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="147dp"
+        android:layout_height="53dp"
         android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -42,8 +42,8 @@
 
     <ImageView
         android:id="@+id/studentBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="148dp"
+        android:layout_height="47dp"
         android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
