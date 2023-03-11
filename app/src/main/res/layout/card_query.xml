@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="#75D2D2D2"
+    app:cardCornerRadius="25dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="385dp"
+        android:layout_height="150dp"
+        android:background="@color/white"
+        android:elevation="40dp"
+        android:padding="15dp">
+
+
+        <TextView
+            android:id="@+id/textType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Type: "
+            android:textColor="#7268A5"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textSender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Sender: "
+            android:textColor="#7268A5"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textType"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Reason: "
+            android:textColor="#7268A5"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textReason"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textType"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="14dp"
+            android:layout_toEndOf="@+id/textHeading"
+            android:fontFamily="@font/montserrat"
+            android:text="reason"
+            android:textColor="#7268A5"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
