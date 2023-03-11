@@ -18,14 +18,24 @@
         android:textColorHint="#7268A6"
         android:textColor="#7268A6"
         android:background="@drawable/background_et_rounded"
-        android:drawableRight="@drawable/icon_profile"
-        android:drawablePadding="25dp"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingRight="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/iconUsername"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name"
+        app:layout_constraintVertical_bias="0.421"
+        app:srcCompat="@drawable/icon_profile" />
 
     <EditText
         android:id="@+id/cpwd"
@@ -39,7 +49,7 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingRight="70dp"
         android:textColor="#7268A6"
         android:textColorHint="#7268A6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +69,7 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:paddingLeft="20dp"
-        android:paddingRight="50dp"
+        android:paddingRight="70dp"
         android:textColor="#7268A6"
         android:textColorHint="#7268A6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +78,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
-        android:id="@+id/pwd_img"
+        android:id="@+id/icon_pwd"
         android:layout_width="32dp"
         android:layout_height="29dp"
         app:layout_constraintBottom_toBottomOf="@+id/userPwd"
@@ -100,14 +110,24 @@
         android:textColorHint="#7268A6"
         android:textColor="#7268A6"
         android:background="@drawable/background_et_rounded"
-        android:drawableRight="@drawable/icon_profile"
-        android:drawablePadding="25dp"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingRight="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name"
         tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/iconName"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toBottomOf="@+id/epf_background"
+        app:layout_constraintEnd_toEndOf="@+id/epf_background"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/epf_background"
+        app:layout_constraintTop_toTopOf="@+id/epf_background"
+        app:layout_constraintVertical_bias="0.421"
+        app:srcCompat="@drawable/icon_profile" />
 
     <ImageView
         android:id="@+id/signUp"

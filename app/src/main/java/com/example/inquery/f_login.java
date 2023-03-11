@@ -7,9 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,7 +34,7 @@ public class f_login extends AppCompatActivity {
         signUp= findViewById(R.id.signupBtn);
         login= findViewById(R.id.loginBtn);
         forgotPwd= findViewById(R.id.forgotBtn);
-        pwdsh= findViewById(R.id.pwd_img);
+        pwdsh= findViewById(R.id.icon_pwd);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

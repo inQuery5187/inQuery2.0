@@ -19,8 +19,6 @@
             android:layout_height="48dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/background_et_rounded"
-            android:drawableRight="@drawable/icon_profile"
-            android:drawablePadding="25dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
             android:hint="@string/username"
@@ -28,7 +26,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingRight="70dp"
             android:textColor="#7268A6"
             android:textColorHint="#7268A6"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,14 +48,14 @@
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:paddingLeft="20dp"
-            android:paddingRight="50dp"
+            android:paddingRight="70dp"
             android:textColor="#7268A6"
             android:textColorHint="#7268A6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name" />
         <ImageView
-            android:id="@+id/pwd_img"
+            android:id="@+id/icon_pwd"
             android:layout_width="32dp"
             android:layout_height="29dp"
             app:layout_constraintBottom_toBottomOf="@+id/userPwd"
@@ -151,6 +149,18 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+        <ImageView
+            android:id="@+id/iconUsername"
+            android:layout_width="32dp"
+            android:layout_height="29dp"
+            app:layout_constraintBottom_toBottomOf="@+id/name"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/name"
+            app:layout_constraintVertical_bias="0.421"
+            app:srcCompat="@drawable/icon_profile" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

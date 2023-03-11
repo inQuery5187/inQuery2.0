@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -33,7 +32,7 @@ public class f_signup extends AppCompatActivity {
         userPwd = findViewById(R.id.userPwd);
         cpwd = findViewById(R.id.cpwd);
         submit = findViewById(R.id.signUp);
-        pwdsh = findViewById(R.id.pwd_img);
+        pwdsh = findViewById(R.id.icon_pwd);
         cpwdsh = findViewById(R.id.cpwd_img);
         Data = new Data();
         int i = 1;
