@@ -38,7 +38,7 @@ public class qcomplaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qcomplaint);
         submit= findViewById(R.id.csubmit);
-        dialog= findViewById(R.id.spinnerReciever);
+        dialog= findViewById(R.id.receiver);
         against= findViewById(R.id.rfrom);
         reason= findViewById(R.id.rreason);
         db= FirebaseDatabase.getInstance().getReference("Data").child("Faculty");

@@ -37,7 +37,7 @@ public class qleavemulti extends AppCompatActivity implements DatePickerDialog.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qleavemulti);
-        teachersel = findViewById(R.id.spinnerReciever);
+        teachersel = findViewById(R.id.receiver);
         btFromDate = findViewById(R.id.btFromDate);
         btToDate = findViewById(R.id.btToDate);
         fromDate = findViewById(R.id.fromDate);

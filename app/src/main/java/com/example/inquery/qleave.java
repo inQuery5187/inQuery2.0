@@ -34,8 +34,8 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qleavesingle);
-        teachersel = findViewById(R.id.spinnerReciever);
+        setContentView(R.layout.activity_qleave);
+        teachersel = findViewById(R.id.receiver);
         btPickDate = findViewById(R.id.btPickDate);
         singleDate = findViewById(R.id.fromDate);
         btPickDate.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +97,7 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
                                 item = item+ ", ";
                             }
                         }
-                        teachersel.setText("Choose Reciever: "+item);
+                        teachersel.setText(item);
                     }
                 });
                 mbuilder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
