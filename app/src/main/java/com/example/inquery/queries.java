@@ -152,6 +152,9 @@ public class queries extends AppCompatActivity implements NavigationView.OnNavig
         startActivity(intents);
     }
     private void navSettings() {
+        Intent intents= new Intent(this, settings.class);
+        startActivity(intents);
+        finish();
     }
     private void setNavigationViewListener() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);

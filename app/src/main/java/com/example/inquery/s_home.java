@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
@@ -100,6 +101,10 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
         finish();
     }
     private void navSettings() {
+        Intent intents= new Intent(this, settings.class);
+        startActivity(intents);
+        Log.d("hello", "everybody agrees");
+        finish();
     }
     private void setNavigationViewListener() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
