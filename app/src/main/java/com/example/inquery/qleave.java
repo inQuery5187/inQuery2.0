@@ -63,9 +63,9 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
                     valDate= singleDate.getText().toString().trim();
                     valReason= reason.getText().toString().trim();
                     for(String str: toAdd){
-                        reference.child(str).child("leave").child("date").setValue(valDate);
-                        reference.child(str).child("leave").child("from").setValue(ID);
-                        reference.child(str).child("leave").child("reason").setValue(valReason);
+                        reference.child(str).child("leave").child(ID).child("date").setValue(valDate);
+                        reference.child(str).child("leave").child(ID).child("from").setValue(ID);
+                        reference.child(str).child("leave").child(ID).child("reason").setValue(valReason);
                     }
 
                     Toast.makeText(qleave.this, "Data submitted", Toast.LENGTH_SHORT).show();

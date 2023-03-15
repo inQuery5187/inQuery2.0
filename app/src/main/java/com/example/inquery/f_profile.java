@@ -79,7 +79,7 @@ public class f_profile extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(f_profile.this, f_login.class);
+        Intent intent = new Intent(f_profile.this, MainActivity.class);
         startActivity(intent);
         finish();
     }

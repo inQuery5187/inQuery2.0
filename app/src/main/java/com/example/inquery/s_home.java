@@ -138,7 +138,7 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(s_home.this, s_login.class);
+        Intent intent = new Intent(s_home.this, MainActivity.class);
         startActivity(intent);
         finish();
     }

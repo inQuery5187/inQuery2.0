@@ -60,9 +60,9 @@ public class qmisconduct extends AppCompatActivity {
                     valAction = action.getText().toString().trim();
                     valApology = apology.getText().toString().trim();
                     for(String str: toAdd){
-                        db.child(str).child("misconduct").child("action").setValue(valAction);
-                        db.child(str).child("misconduct").child("from").setValue(ID);
-                        db.child(str).child("misconduct").child("apology").setValue(valApology);
+                        db.child(str).child("misconduct").child(ID).child("action").setValue(valAction);
+                        db.child(str).child("misconduct").child(ID).child("from").setValue(ID);
+                        db.child(str).child("misconduct").child(ID).child("apology").setValue(valApology);
                     }
 
                     Toast.makeText(qmisconduct.this, "Data submitted", Toast.LENGTH_SHORT).show();

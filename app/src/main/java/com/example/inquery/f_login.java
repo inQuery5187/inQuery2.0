@@ -74,9 +74,6 @@ public class f_login extends AppCompatActivity {
                         }
                     }
                 });
-                Intent intent= new Intent(f_login.this, f_profile.class);
-                startActivity(intent);
-                finish();
             }
         });
         pwdsh.setImageResource(R.drawable.icon_notvisible);

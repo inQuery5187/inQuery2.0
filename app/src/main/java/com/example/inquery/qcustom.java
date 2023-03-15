@@ -57,8 +57,8 @@ public class qcustom extends AppCompatActivity {
                     submit.setImageResource(R.drawable.button_medium_dark);
                     valQuery = query.getText().toString().trim();
                     for(String str: toAdd){
-                        db.child(str).child("custom").child("from").setValue(ID);
-                        db.child(str).child("custom").child("reason").setValue(valQuery);
+                        db.child(str).child("custom").child(ID).child("from").setValue(ID);
+                        db.child(str).child("custom").child(ID).child("reason").setValue(valQuery);
                     }
 
                     Toast.makeText(qcustom.this, "Data submitted", Toast.LENGTH_SHORT).show();

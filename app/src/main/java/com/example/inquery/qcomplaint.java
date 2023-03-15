@@ -60,9 +60,9 @@ public class qcomplaint extends AppCompatActivity {
                     valAgainst= against.getText().toString().trim();
                     valReason= reason.getText().toString().trim();
                     for(String str: toAdd){
-                        db.child(str).child("complaints").child("against").setValue(valAgainst);
-                        db.child(str).child("complaints").child("from").setValue(ID);
-                        db.child(str).child("complaints").child("reason").setValue(valReason);
+                        db.child(str).child("complaints").child(ID).child("against").setValue(valAgainst);
+                        db.child(str).child("complaints").child(ID).child("from").setValue(ID);
+                        db.child(str).child("complaints").child(ID).child("reason").setValue(valReason);
                     }
 
                     Toast.makeText(qcomplaint.this, "Data submitted", Toast.LENGTH_SHORT).show();
