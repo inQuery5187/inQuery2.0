@@ -7,9 +7,13 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -18,12 +22,16 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     public NavigationView navigationView;
+    String ID;
+    Button logout;
+    private static final String SHARED_PREFS= "sharedPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shome);
         setNavigationViewListener();
+        logout= findViewById(R.id.button);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         // drawer layout instance to toggle the menu icon to open
@@ -38,6 +46,23 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
 
         // to make the Navigation drawer icon always appear on the action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        ID= sharedPreferences.getString("sID", "");
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(s_home.this, s_login.class);
+                startActivity(intent);
+                finish();
+                SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("sID", "");
+                editor.putString("flag", "");
+                editor.apply();
+                Toast.makeText(s_home.this, "Logged out successfully!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

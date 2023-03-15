@@ -13,6 +13,8 @@
         tools:context=".MainActivity"
         tools:ignore="HardcodedText">
 
+        <!-- this the navigation view which draws and shows the navigation drawer -->
+        <!-- include the menu created in the menu folder -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -149,7 +151,7 @@
                 app:layout_constraintTop_toTopOf="@+id/leave"
                 app:layout_constraintVertical_bias="0.514" />
 
-           <!-- <TextView
+            <!-- <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -183,10 +185,10 @@
                 android:layout_alignBottom="@+id/complaint"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Complaint"
                 android:textSize="20sp"
-                android:fontFamily="@font/montserrat"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/complaint"
                 app:layout_constraintEnd_toEndOf="@+id/complaint"
@@ -204,10 +206,10 @@
                 android:layout_alignBottom="@+id/miscon"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Misconduct"
                 android:textSize="20sp"
-                android:fontFamily="@font/montserrat"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/miscon"
                 app:layout_constraintEnd_toEndOf="@+id/miscon"
@@ -226,10 +228,10 @@
                 android:layout_alignBottom="@+id/custom"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Custom Query"
                 android:textSize="20sp"
-                android:fontFamily="@font/montserrat"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/custom"
                 app:layout_constraintEnd_toEndOf="@+id/custom"
@@ -241,8 +243,6 @@
 
         </RelativeLayout>
 
-        <!-- this the navigation view which draws and shows the navigation drawer -->
-        <!-- include the menu created in the menu folder -->
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"
             android:layout_width="wrap_content"

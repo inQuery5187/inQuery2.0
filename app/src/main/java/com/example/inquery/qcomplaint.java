@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class qcomplaint extends AppCompatActivity {
     ImageView submit;
@@ -31,7 +34,9 @@ public class qcomplaint extends AppCompatActivity {
     ArrayList<Integer> mUserItems= new ArrayList<Integer>();
     ArrayList<String> nameArr= new ArrayList<String>();
     ArrayList<String> userArr= new ArrayList<String>();
-    String valAgainst, valReason;
+    ArrayList<String> toAdd= new ArrayList<String>();
+    String valAgainst, valReason, ID;
+    private static final String SHARED_PREFS= "sharedPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +46,32 @@ public class qcomplaint extends AppCompatActivity {
         dialog= findViewById(R.id.receiver);
         against= findViewById(R.id.rfrom);
         reason= findViewById(R.id.rreason);
-        db= FirebaseDatabase.getInstance().getReference("Data").child("Faculty");
+        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        ID= sharedPreferences.getString("sID", "");
+        db= FirebaseDatabase.getInstance().getReference("Data").child("Faculty").child("users");
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                submit.setImageResource(R.drawable.button_medium_dark);
-                valAgainst= against.getText().toString().trim();
-                valReason= reason.getText().toString().trim();
-                db.child("complaints").child("against").setValue(valAgainst);
-                db.child("complaints").child("from").setValue("2021B1541083");
-                db.child("complaints").child("reason").setValue(valReason);
-                Toast.makeText(qcomplaint.this, "Data submitted", Toast.LENGTH_SHORT).show();
-            }
+
+                if(toAdd!=null){
+                    Set<String> adding= new HashSet<String>(toAdd);
+                    toAdd= new ArrayList<>(adding);
+                    submit.setImageResource(R.drawable.button_medium_dark);
+                    valAgainst= against.getText().toString().trim();
+                    valReason= reason.getText().toString().trim();
+                    for(String str: toAdd){
+                        db.child(str).child("complaints").child("against").setValue(valAgainst);
+                        db.child(str).child("complaints").child("from").setValue(ID);
+                        db.child(str).child("complaints").child("reason").setValue(valReason);
+                    }
+
+                    Toast.makeText(qcomplaint.this, "Data submitted", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(qcomplaint.this, "Please select the faculty", Toast.LENGTH_SHORT).show();
+                }
+                }
+
         });
         db.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -97,7 +116,7 @@ public class qcomplaint extends AppCompatActivity {
                         //for loop
                         for (int i = 0; i < mUserItems.size(); i++) {
                             item = item+ listItems[mUserItems.get(i)];
-
+                            toAdd.add(userArr.get(mUserItems.get(i)));
                             if (i!=mUserItems.size() -1) {
                                 //add comma
                                 item = item+ ", ";

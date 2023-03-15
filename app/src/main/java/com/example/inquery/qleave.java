@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,16 +24,22 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.Set;
 
 public class qleave extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     TextView teachersel, singleDate;
     DatabaseReference reference;
-    ImageView btPickDate;
+    ImageView btPickDate, submit;
+    EditText reason;
     String[] listItems;
     boolean[] checkedItems;
     ArrayList<Integer> mUserItems= new ArrayList<Integer>();
     ArrayList<String> nameArr= new ArrayList<String>();
     ArrayList<String> userArr= new ArrayList<String>();
+    ArrayList<String> toAdd= new ArrayList<String>();
+    private static final String SHARED_PREFS= "sharedPrefs";
+    String valDate, valReason, ID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +47,34 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
         teachersel = findViewById(R.id.receiver);
         btPickDate = findViewById(R.id.btPickDate);
         singleDate = findViewById(R.id.fromDate);
+        submit= findViewById(R.id.lsubmit);
+        reason= findViewById(R.id.rreason);
+        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        ID= sharedPreferences.getString("sID", "");
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                if(toAdd!=null){
+                    Set<String> adding= new HashSet<String>(toAdd);
+                    toAdd= new ArrayList<>(adding);
+                    submit.setImageResource(R.drawable.button_medium_dark);
+                    valDate= singleDate.getText().toString().trim();
+                    valReason= reason.getText().toString().trim();
+                    for(String str: toAdd){
+                        reference.child(str).child("leave").child("date").setValue(valDate);
+                        reference.child(str).child("leave").child("from").setValue(ID);
+                        reference.child(str).child("leave").child("reason").setValue(valReason);
+                    }
+
+                    Toast.makeText(qleave.this, "Data submitted", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(qleave.this, "Please select the faculty", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         btPickDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,8 +84,8 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
             }
         });
 
-        reference= FirebaseDatabase.getInstance().getReference("Data");
-        reference.child("Faculty").addListenerForSingleValueEvent(new ValueEventListener() {
+        reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty").child("users");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
@@ -92,6 +129,7 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
                         for (int i = 0; i < mUserItems.size(); i++) {
                             item = item+ listItems[mUserItems.get(i)];
 
+                            toAdd.add(userArr.get(mUserItems.get(i)));
                             if (i!=mUserItems.size() -1) {
                                 //add comma
                                 item = item+ ", ";

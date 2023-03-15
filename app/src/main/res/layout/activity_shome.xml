@@ -18,17 +18,17 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="124dp"
+            android:layout_width="283dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="276dp"
             android:layout_weight="1"
             android:fontFamily="@font/montserrat"
             android:text="Welcome to inQuery"
             android:textColor="#6B5DB1"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,9 +37,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="72dp"
-            android:text="View Previous Applications"
+            android:text="Logout"
+            android:backgroundTint="#5D5588"
+            android:fontFamily="@font/montserrat"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="32dp"
+            android:elevation="25dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
     </androidx.constraintlayout.widget.ConstraintLayout>

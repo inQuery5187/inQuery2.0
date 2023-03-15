@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -22,11 +23,14 @@ public class s_login extends AppCompatActivity {
     EditText userId, userPwd;
     ImageView signUp, login, pwdsh;
     DatabaseReference reference;
+    String ID;
+    private static final String SHARED_PREFS= "sharedPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slogin);
         getSupportActionBar().hide();
+        checkLogin();
         userId= findViewById(R.id.name);
         userPwd= findViewById(R.id.userPwd);
         signUp= findViewById(R.id.signupBtn);
@@ -37,8 +41,9 @@ public class s_login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 login.setImageResource(R.drawable.button_medium_dark);
-                String ID= userId.getText().toString();
+                ID= userId.getText().toString();
                 String pwd= userPwd.getText().toString();
+
                 //if id and pwd exists in database login
                 reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users");
                 reference.child(ID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -51,9 +56,15 @@ public class s_login extends AppCompatActivity {
                                 if(pwdChk.equals(pwd)){
                                     Toast.makeText(s_login.this, "Logged in using Password!", Toast.LENGTH_SHORT).show();
                                     Intent extraIntent = new Intent(s_login.this, s_home.class);
+                                    SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putString("sID", ID);
+                                    editor.putString("flag", "true");
+                                    editor.apply();
                                     startActivity(extraIntent);
                                     finish();
-                                }else{
+                                }
+                                else{
                                     Toast.makeText(s_login.this, "incorrect password", Toast.LENGTH_SHORT).show();
                                     login.setImageResource(R.drawable.button_medium);
                                 }
@@ -86,6 +97,17 @@ public class s_login extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void checkLogin() {
+        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        String check = sharedPreferences.getString("flag", "");
+
+        if(check.equals("true")){
+            Intent extraIntent = new Intent(s_login.this, s_home.class);
+            startActivity(extraIntent);
+            finish();
+        }
     }
 
     @Override
