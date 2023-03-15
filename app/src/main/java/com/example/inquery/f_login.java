@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -24,11 +25,13 @@ public class f_login extends AppCompatActivity {
     TextView forgotPwd;
     ImageView signUp, login, pwdsh;
     DatabaseReference reference;
+    private static final String SHARED_PREFS= "sharedPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flogin);
         getSupportActionBar().hide();
+        checkLogin();
         userId= findViewById(R.id.name);
         userPwd= findViewById(R.id.userPwd);
         signUp= findViewById(R.id.signupBtn);
@@ -56,6 +59,11 @@ public class f_login extends AppCompatActivity {
 
                                     Toast.makeText(f_login.this, "Logged in using Password!", Toast.LENGTH_SHORT).show();
                                     Intent extraIntent = new Intent(f_login.this, f_profile.class);
+                                    SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putString("fID", ID);
+                                    editor.putString("Flag", "true");
+                                    editor.apply();
                                     startActivity(extraIntent);
                                     finish();
                                 }else{
@@ -96,6 +104,18 @@ public class f_login extends AppCompatActivity {
         });
 
     }
+
+    private void checkLogin() {
+        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        String check = sharedPreferences.getString("Flag", "");
+
+        if(check.equals("true")){
+            Intent extraIntent = new Intent(f_login.this, f_profile.class);
+            startActivity(extraIntent);
+            finish();
+        }
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
