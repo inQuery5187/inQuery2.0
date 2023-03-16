@@ -68,6 +68,36 @@
             android:textColor="#7268A5"
             android:textSize="14sp" />
 
+        <TextView
+            android:id="@+id/approve"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/button_medium"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textReason"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:textSize="11dp"
+            android:text="APPROVE"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/deny"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/button_medium"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textReason"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="14dp"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textSize="11dp"
+            android:text="DENY"
+            android:textColor="@color/white"/>
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
