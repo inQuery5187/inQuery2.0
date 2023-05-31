@@ -46,7 +46,7 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
         setContentView(R.layout.activity_qleave);
         teachersel = findViewById(R.id.receiver);
         btPickDate = findViewById(R.id.btPickDate);
-        singleDate = findViewById(R.id.fromDate);
+        singleDate = findViewById(R.id.Leave);
         submit= findViewById(R.id.lsubmit);
         reason= findViewById(R.id.rreason);
         SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);

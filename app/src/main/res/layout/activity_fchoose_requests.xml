@@ -4,91 +4,252 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".f_chooseRequests">
+    tools:context=".queries">
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="152dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Requests"
-        android:textColor="#6B5DB1"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/my_drawer_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:ignore="HardcodedText">
 
-    <TextView
-        android:id="@+id/leave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/montserrat"
-        android:gravity="center"
-        android:text="Leave"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView17"
-        app:layout_constraintHorizontal_bias="0.789"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        <!-- this the navigation view which draws and shows the navigation drawer -->
+        <!-- include the menu created in the menu folder -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/misconduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="#5D5588"
-        android:elevation="25dp"
-        android:fontFamily="@font/montserrat"
-        android:gravity="center"
-        android:text="Misconduct"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/backgroundtop" />
 
-    <TextView
-        android:id="@+id/custom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:backgroundTint="#5D5588"
-        android:elevation="25dp"
-        android:fontFamily="@font/montserrat"
-        android:gravity="center"
-        android:text="Custom"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/leave"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/leave"
-        app:layout_constraintTop_toBottomOf="@+id/leave" />
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="139dp"
+                android:layout_height="42dp"
+                android:layout_alignBottom="@+id/imageView2"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="REQUESTS"
+                android:textColor="#7268A6"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/complaints"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:backgroundTint="#5D5588"
-        android:elevation="25dp"
-        android:fontFamily="@font/montserrat"
-        android:gravity="center"
-        android:text="Complaints"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/misconduct"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/misconduct"
-        app:layout_constraintTop_toBottomOf="@+id/misconduct" />
+            <ImageView
+                android:id="@+id/leave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="59dp"
+                android:layout_marginTop="179dp"
+                android:layout_marginEnd="62dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:srcCompat="@drawable/button_queries" />
+
+            <!--<ImageView
+                android:id="@+id/leavemulti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leave"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="61dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/rectangular_button" />-->
+
+            <ImageView
+                android:id="@+id/complaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leave"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="61dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/leave"
+                app:srcCompat="@drawable/button_queries" />
+
+            <ImageView
+                android:id="@+id/miscon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/complaint"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="61dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/complaint"
+                app:srcCompat="@drawable/button_queries" />
+
+            <ImageView
+                android:id="@+id/custom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/miscon"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="61dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/miscon"
+                app:srcCompat="@drawable/button_queries" />
+
+            <TextView
+                android:id="@+id/Leave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/leave"
+                android:layout_alignTop="@+id/leave"
+                android:layout_alignEnd="@+id/leave"
+                android:layout_alignBottom="@+id/leave"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Leave"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/leave"
+                app:layout_constraintEnd_toEndOf="@+id/leave"
+                app:layout_constraintHorizontal_bias="0.22"
+                app:layout_constraintStart_toStartOf="@+id/leave"
+                app:layout_constraintTop_toTopOf="@+id/leave"
+                app:layout_constraintVertical_bias="0.514" />
+
+            <!-- <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/leavemulti"
+                android:layout_alignTop="@+id/leavemulti"
+                android:layout_alignEnd="@+id/leavemulti"
+                android:layout_alignBottom="@+id/leavemulti"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="17.5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="17.5dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Leave (multi day)"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/leavemulti"
+                app:layout_constraintEnd_toEndOf="@+id/leavemulti"
+                app:layout_constraintHorizontal_bias="0.16"
+                app:layout_constraintStart_toStartOf="@+id/leavemulti"
+                app:layout_constraintTop_toTopOf="@+id/leavemulti"
+                app:layout_constraintVertical_bias="0.342" />-->
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/complaint"
+                android:layout_alignTop="@+id/complaint"
+                android:layout_alignEnd="@+id/complaint"
+                android:layout_alignBottom="@+id/complaint"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Complaint"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/complaint"
+                app:layout_constraintEnd_toEndOf="@+id/complaint"
+                app:layout_constraintHorizontal_bias="0.156"
+                app:layout_constraintStart_toStartOf="@+id/complaint"
+                app:layout_constraintTop_toTopOf="@+id/complaint"
+                app:layout_constraintVertical_bias="0.342" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/miscon"
+                android:layout_alignTop="@+id/miscon"
+                android:layout_alignEnd="@+id/miscon"
+                android:layout_alignBottom="@+id/miscon"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Misconduct"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/miscon"
+                app:layout_constraintEnd_toEndOf="@+id/miscon"
+                app:layout_constraintHorizontal_bias="0.159"
+                app:layout_constraintStart_toStartOf="@+id/miscon"
+                app:layout_constraintTop_toTopOf="@+id/miscon"
+                app:layout_constraintVertical_bias="0.371" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/custom"
+                android:layout_alignTop="@+id/custom"
+                android:layout_alignEnd="@+id/custom"
+                android:layout_alignBottom="@+id/custom"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Custom Query"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/custom"
+                app:layout_constraintEnd_toEndOf="@+id/custom"
+                app:layout_constraintHorizontal_bias="0.169"
+                app:layout_constraintStart_toStartOf="@+id/custom"
+                app:layout_constraintTop_toTopOf="@+id/custom"
+                app:layout_constraintVertical_bias="0.342" />
+
+
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/navigation_menu" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

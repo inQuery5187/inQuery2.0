@@ -6,16 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class f_chooseRequests extends AppCompatActivity {
-    Button leave, custom, misconduct, complaints;
+    ImageView leave, custom, misconduct, complaints;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fchoose_requests);
         leave= findViewById(R.id.leave);
-        misconduct= findViewById(R.id.misconduct);
-        complaints= findViewById(R.id.complaints);
+        misconduct= findViewById(R.id.miscon);
+        complaints= findViewById(R.id.complaint);
         custom= findViewById(R.id.custom);
 
         leave.setOnClickListener(new View.OnClickListener() {
