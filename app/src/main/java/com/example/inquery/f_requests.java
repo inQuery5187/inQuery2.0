@@ -1,5 +1,6 @@
 package com.example.inquery;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,58 +35,64 @@ import com.google.firebase.database.ValueEventListener;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class f_requests extends AppCompatActivity {
     String ID, reason;
     int no;
     DatabaseReference reference;
-//    ArrayList<Requests> request = new ArrayList<>();
-//    ArrayList<String> leaves = new ArrayList<>();
-//    ArrayList<String> misconducts = new ArrayList<>();
-//    ArrayList<String> custom = new ArrayList<>();
-////    ArrayList<String> complaints = new ArrayList<>();
-//    Requests r1 =new Requests("leave", "2021b1541083", "Something");
-//    Requests r2 =new Requests("leave", "2021b1541083", "Something");
-//    Requests r3 =new Requests("misconduct", "2021b1541083", "Something");
-//    Requests r4 =new Requests("misconduct", "2021b1541083", "Something");
-//    Requests r5 =new Requests("custom", "2021b1541083", "Something");
-//    Requests r6 =new Requests("custom", "2021b1541083", "Something");
-//    Requests r7 =new Requests("complaint", "2021b1541083", "Something");
-//    Requests r8 =new Requests("complaint", "2021b1541083", "Something");
-//    Requests r9 =new Requests("misconduct", "2021b1541083", "Something");
-//    Requests r10 =new Requests("leave", "2021b1541083", "Something");
-//    Requests[] req= {r1,r2,r3,r4,r5,r6,r7,r8,r9,r10, };
     RecyclerView recyclerView;
     Requests requests;
     int count=0;
     String type;
     TextView showType;
+    ImageView showReq;
     private static final String SHARED_PREFS= "sharedPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frequests);
         showType= findViewById(R.id.textView5);
+        showReq= findViewById(R.id.noReq);
+        showReq.setVisibility(View.INVISIBLE);
         SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         ID= sharedPreferences.getString("fID", "");
         type= getIntent().getStringExtra("type");
         showType.setText(StringUtils.capitalize(type));
-
-
-
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty").child("users").child(ID);
-        reference.child(type).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                no= (int)snapshot.getChildrenCount();
-            }
+        try {
+            reference.child(type).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    no= (int)snapshot.getChildrenCount();
+                    if(no>0){
+                        getData();
+                    }
+                    else{
+                        showReq.setVisibility(View.VISIBLE);
+                    }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                }
 
-            }
-        });
-        Requests[] requ = new Requests[no];
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+        catch(Exception e){
+            showReq.setVisibility(View.VISIBLE);
+            Log.d("EXCP", e.toString());
+        }
+
+
+
+    }
+
+    private void getData() {
+
+        List<Requests> requ= new ArrayList<>();
+        reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty").child("users").child(ID);
         reference.child(type).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -93,10 +101,9 @@ public class f_requests extends AppCompatActivity {
                     req.type=type;
                     req.reason= childSnapshot.child("reason").getValue(String.class);
                     req.sender= childSnapshot.getKey();
-                    requ[count]= req;
-                    count++;
+                    requ.add(req);
                 }
-                setRecyclerView(requ);
+                setRecyclerView(requ, type);
             }
 
             @Override
@@ -104,24 +111,14 @@ public class f_requests extends AppCompatActivity {
 
             }
         });
+
     }
 
-    private void setRecyclerView(Requests[] requ) {
+    private void setRecyclerView(List<Requests> requ, String type) {
         recyclerView= findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        Requests r1 =new Requests("leave", "2021b1541083", "Something");
-//        Requests r2 =new Requests("leave", "2021b1541083", "Something");
-//        Requests r3 =new Requests("misconduct", "2021b1541083", "Something");
-//        Requests r4 =new Requests("misconduct", "2021b1541083", "Something");
-//        Requests r5 =new Requests("custom", "2021b1541083", "Something");
-//        Requests r6 =new Requests("custom", "2021b1541083", "Something");
-//        Requests r7 =new Requests("complaint", "2021b1541083", "Something");
-//        Requests r8 =new Requests("complaint", "2021b1541083", "Something");
-//        Requests r9 =new Requests("misconduct", "2021b1541083", "Something");
-//        Requests r10 =new Requests("leave", "2021b1541083", "Something");
-//        Requests[] reques= {r1,r2,r3,r4,r5,r6,r7,r8,r9,r10, };
-        CustomAdapter c= new CustomAdapter(requ);
-        recyclerView.setAdapter(c);
+        RequestsAdapter requestsAdapter= new RequestsAdapter(requ, type);
+        recyclerView.setAdapter(requestsAdapter);
     }
 
 //    @Override
