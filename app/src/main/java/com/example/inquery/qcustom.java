@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,7 +29,7 @@ public class qcustom extends AppCompatActivity {
     ImageView submit;
     TextView dialog;
     EditText against, query;
-    DatabaseReference db;
+    DatabaseReference db, reference;
     String[] listItems;
     boolean[] checkedItems;
     ArrayList<Integer> mUserItems= new ArrayList<Integer>();
@@ -36,6 +37,7 @@ public class qcustom extends AppCompatActivity {
     ArrayList<String> userArr= new ArrayList<String>();
     ArrayList<String> toAdd= new ArrayList<String>();
     String valQuery, ID;
+    int no;
     private static final String SHARED_PREFS= "sharedPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +64,26 @@ public class qcustom extends AppCompatActivity {
                         db.child(str).child("custom").child(ID).child("status").setValue("Pending c:");
 
                     }
+                    reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID).child("requestHistory");
+                    reference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            no= (int)snapshot.getChildrenCount();
+                        }
 
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    HashMap<String, String> map= new HashMap<>();
+                    map.put("type", "custom");
+                    map.put("sender", ID);
+                    map.put("reason", valQuery);
+                    reference.child("request"+(no+1)).setValue(map);
                     Toast.makeText(qcustom.this, "Data submitted", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 else{
                     Toast.makeText(qcustom.this, "Please select the faculty", Toast.LENGTH_SHORT).show();
