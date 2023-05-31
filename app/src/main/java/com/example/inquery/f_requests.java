@@ -96,12 +96,14 @@ public class f_requests extends AppCompatActivity {
         reference.child(type).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Requests req= new Requests("", "", "");
+
                 for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                    Requests req= new Requests("", "", "");
                     req.type=type;
                     req.reason= childSnapshot.child("reason").getValue(String.class);
                     req.sender= childSnapshot.getKey();
                     requ.add(req);
+                    Log.d("REQUESTS", requ.get(0).getReason());
                 }
                 setRecyclerView(requ, type);
             }

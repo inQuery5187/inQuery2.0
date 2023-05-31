@@ -28,7 +28,7 @@ public class qcomplaint extends AppCompatActivity {
     ImageView submit;
     TextView dialog;
     EditText against, reason;
-    DatabaseReference db;
+    DatabaseReference db, reference;
     String[] listItems;
     boolean[] checkedItems;
     ArrayList<Integer> mUserItems= new ArrayList<Integer>();
@@ -63,9 +63,11 @@ public class qcomplaint extends AppCompatActivity {
                         db.child(str).child("complaints").child(ID).child("against").setValue(valAgainst);
                         db.child(str).child("complaints").child(ID).child("from").setValue(ID);
                         db.child(str).child("complaints").child(ID).child("reason").setValue(valReason);
+                        db.child(str).child("complaints").child(ID).child("status").setValue("Pending c:");
                     }
-
+                    reference= FirebaseDatabase.getInstance().getReference("Data").child("Child");
                     Toast.makeText(qcomplaint.this, "Data submitted", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 else{
                     Toast.makeText(qcomplaint.this, "Please select the faculty", Toast.LENGTH_SHORT).show();

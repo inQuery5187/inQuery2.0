@@ -59,6 +59,8 @@ public class qcustom extends AppCompatActivity {
                     for(String str: toAdd){
                         db.child(str).child("custom").child(ID).child("from").setValue(ID);
                         db.child(str).child("custom").child(ID).child("reason").setValue(valQuery);
+                        db.child(str).child("custom").child(ID).child("status").setValue("Pending c:");
+
                     }
 
                     Toast.makeText(qcustom.this, "Data submitted", Toast.LENGTH_SHORT).show();
