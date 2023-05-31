@@ -45,15 +45,15 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="139dp"
+                android:layout_width="wrap_content"
                 android:layout_height="42dp"
                 android:layout_alignBottom="@+id/imageView2"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="137dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="23dp"
-                android:layout_marginEnd="135dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
@@ -68,8 +68,9 @@
 
             <TextView
                 android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:layout_below="@+id/imageView2"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="60dp"
@@ -95,11 +96,12 @@
 
             <TextView
                 android:id="@+id/rollNo"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/userId"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_below="@+id/textview96"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="29dp"
                 android:layout_toEndOf="@+id/textview"
                 android:fontFamily="@font/montserrat"
                 android:text="university roll no."
@@ -121,8 +123,9 @@
 
             <TextView
                 android:id="@+id/name5"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_width="250dp"
+                android:minHeight="48dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/phoneNo"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="28dp"
@@ -134,8 +137,9 @@
 
             <TextView
                 android:id="@+id/userId"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:layout_below="@+id/name"
                 android:layout_marginStart="20sp"
                 android:layout_marginTop="28sp"
@@ -163,7 +167,7 @@
                 android:id="@+id/textview"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_below="@+id/textview96"
+                android:layout_below="@+id/userId"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="28dp"
@@ -177,7 +181,7 @@
                 android:id="@+id/textview2"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_below="@+id/textview"
+                android:layout_below="@+id/rollNo"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="28dp"
@@ -191,7 +195,7 @@
                 android:id="@+id/textview3"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_below="@+id/textview2"
+                android:layout_below="@+id/phoneNo"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="28dp"
@@ -200,6 +204,32 @@
                 android:textColor="#7268A6"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name5"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="133dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="155dp"
+                android:layout_marginBottom="134dp"
+                app:srcCompat="@drawable/button_medium" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/imageView5"
+                android:layout_alignEnd="@+id/imageView5"
+                android:layout_alignBottom="@+id/imageView5"
+                android:layout_marginStart="31dp"
+                android:layout_marginEnd="34dp"
+                android:layout_marginBottom="13dp"
+                android:text="TextView" />
 
 
         </RelativeLayout>

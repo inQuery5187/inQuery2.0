@@ -19,7 +19,7 @@
         <TextView
             android:id="@+id/textView6"
             android:layout_width="283dp"
-            android:layout_height="46dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="276dp"
             android:layout_weight="1"
             android:fontFamily="@font/montserrat"
@@ -32,17 +32,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <TextView
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="72dp"
             android:text="Logout"
-            android:backgroundTint="#5D5588"
+            android:background="@drawable/button_medium"
             android:fontFamily="@font/montserrat"
             android:textColor="#FFFFFF"
             app:cornerRadius="32dp"
             android:elevation="25dp"
+            android:textSize="18sp"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />

@@ -148,6 +148,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
             android:text="Submit"
+            android:textSize="16dp"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/csubmit"
             app:layout_constraintEnd_toEndOf="@+id/csubmit"
