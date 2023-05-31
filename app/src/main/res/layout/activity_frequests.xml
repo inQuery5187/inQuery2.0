@@ -24,7 +24,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="Requests"
             android:textColor="#6B5DB1"
             android:textSize="24sp"
             android:textStyle="bold"

@@ -57,7 +57,6 @@ public class f_profile extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     if (task.getResult().exists()) {
 
-                        Toast.makeText(f_profile.this, "Data Exists!", Toast.LENGTH_SHORT).show();
                         DataSnapshot dataSnapshot = task.getResult();
                         String user = String.valueOf(dataSnapshot.child("username").getValue());
                         String nam = String.valueOf(dataSnapshot.child("name").getValue());
@@ -71,7 +70,7 @@ public class f_profile extends AppCompatActivity {
         querybox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(f_profile.this, f_requests.class);
+                Intent intent= new Intent(f_profile.this, f_chooseRequests.class);
                 startActivity(intent);
             }
         });

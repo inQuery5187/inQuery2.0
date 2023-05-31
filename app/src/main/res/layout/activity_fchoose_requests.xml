@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".f_chooseRequests">
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="152dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="88dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Requests"
+        android:textColor="#6B5DB1"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/leave"
+        android:layout_width="107dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="84dp"
+        android:backgroundTint="#5D5588"
+        android:elevation="25dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Leave"
+        app:layout_constraintEnd_toEndOf="@+id/textView17"
+        app:layout_constraintHorizontal_bias="0.711"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <Button
+        android:id="@+id/misconduct"
+        android:layout_width="107dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="108dp"
+        android:backgroundTint="#5D5588"
+        android:elevation="25dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Misconduct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <Button
+        android:id="@+id/custom"
+        android:layout_width="107dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="88dp"
+        android:backgroundTint="#5D5588"
+        android:elevation="25dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Custom"
+        app:layout_constraintEnd_toEndOf="@+id/leave"
+        app:layout_constraintStart_toStartOf="@+id/leave"
+        app:layout_constraintTop_toBottomOf="@+id/leave" />
+
+    <Button
+        android:id="@+id/complaints"
+        android:layout_width="107dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="88dp"
+        android:backgroundTint="#5D5588"
+        android:elevation="25dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Complaints"
+        app:layout_constraintEnd_toEndOf="@+id/misconduct"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/misconduct"
+        app:layout_constraintTop_toBottomOf="@+id/misconduct" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
