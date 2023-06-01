@@ -119,7 +119,7 @@ public class f_requests extends AppCompatActivity {
     private void setRecyclerView(List<Requests> requ, String type) {
         recyclerView= findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        RequestsAdapter requestsAdapter= new RequestsAdapter(requ, type, "Sender: ", ID);
+        RequestsAdapter requestsAdapter= new RequestsAdapter(requ, type, "Sender: ", ID, "faculty");
         recyclerView.setAdapter(requestsAdapter);
     }
 

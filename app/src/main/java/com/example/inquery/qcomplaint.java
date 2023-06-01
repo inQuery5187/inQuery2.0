@@ -74,7 +74,7 @@ public class qcomplaint extends AppCompatActivity {
                     }
                     HashMap<String, String> map= new HashMap<>();
                     map.put("type", "complaint");
-                    map.put("sender", ID);
+                    map.put("status", "Pending c:");
                     map.put("reason", valReason);
                     reference.child(uid).setValue(map);
                     Toast.makeText(qcomplaint.this, "Data submitted", Toast.LENGTH_SHORT).show();

@@ -3,15 +3,25 @@ package com.example.inquery;
 public class Requests {
     public String type;
     public String sender;
+    public String status;
     public String reason;
     public String UID;
 
 
-    public Requests(String type, String sender, String reason) {
+    public Requests(String type, String status, String reason) {
         this.type = type;
-        this.sender = sender;
+        this.status = status;
         this.reason = reason;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public Requests(String type, String sender, String reason, String UID) {
         this.type = type;
         this.sender = sender;

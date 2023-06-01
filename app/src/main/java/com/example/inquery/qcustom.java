@@ -70,7 +70,7 @@ public class qcustom extends AppCompatActivity {
 
                     HashMap<String, String> map= new HashMap<>();
                     map.put("type", "custom");
-                    map.put("sender", ID);
+                    map.put("status", "Pending c:");
                     map.put("reason", valQuery);
                     reference.child(uid).setValue(map);
                     Toast.makeText(qcustom.this, "Data submitted", Toast.LENGTH_SHORT).show();

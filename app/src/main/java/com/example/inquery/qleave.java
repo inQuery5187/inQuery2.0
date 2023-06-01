@@ -75,7 +75,7 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
                     }
                     HashMap<String, String> map= new HashMap<>();
                     map.put("type", "leave");
-                    map.put("sender", ID);
+                    map.put("status", "Pending c:");
                     map.put("reason", valReason);
                     db.child(uid).setValue(map);
 
