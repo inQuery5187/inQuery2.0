@@ -58,30 +58,21 @@ public class qcustom extends AppCompatActivity {
                     toAdd= new ArrayList<>(adding);
                     submit.setImageResource(R.drawable.button_medium_dark);
                     valQuery = query.getText().toString().trim();
+                    reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID).child("requestHistory");
+                    String uid= reference.push().getKey();
                     for(String str: toAdd){
                         db.child(str).child("custom").child(ID).child("from").setValue(ID);
                         db.child(str).child("custom").child(ID).child("reason").setValue(valQuery);
+                        db.child(str).child("custom").child(ID).child("UID").setValue(uid);
                         db.child(str).child("custom").child(ID).child("status").setValue("Pending c:");
 
                     }
-                    reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID).child("requestHistory");
-                    reference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            no= (int)snapshot.getChildrenCount();
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
 
                     HashMap<String, String> map= new HashMap<>();
                     map.put("type", "custom");
                     map.put("sender", ID);
                     map.put("reason", valQuery);
-                    reference.child("request"+(no+1)).setValue(map);
+                    reference.child(uid).setValue(map);
                     Toast.makeText(qcustom.this, "Data submitted", Toast.LENGTH_SHORT).show();
                     finish();
                 }

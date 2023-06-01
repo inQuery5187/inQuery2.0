@@ -4,6 +4,7 @@ public class Requests {
     public String type;
     public String sender;
     public String reason;
+    public String UID;
 
 
     public Requests(String type, String sender, String reason) {
@@ -11,6 +12,13 @@ public class Requests {
         this.sender = sender;
         this.reason = reason;
     }
+    public Requests(String type, String sender, String reason, String UID) {
+        this.type = type;
+        this.sender = sender;
+        this.reason = reason;
+        this.UID = UID;
+    }
+
 
     public String getType() {
         return type;
@@ -18,6 +26,14 @@ public class Requests {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
     }
 
     public String getSender() {

@@ -17,12 +17,15 @@ import java.util.List;
 public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.RequestViewHolder> {
 
     private List<Requests> requestsList;
-    private String type;
-    DatabaseReference reference;
+    private String type, str, ID;
+    DatabaseReference reference, db;
 
-    public RequestsAdapter(List<Requests> requestsList, String type) {
+    public RequestsAdapter(List<Requests> requestsList, String type, String str, String ID) {
         this.requestsList = requestsList;
         this.type= type;
+        this.str= str;
+        this.ID= ID;
+
     }
 
     @NonNull
@@ -36,23 +39,35 @@ public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.Reques
     public void onBindViewHolder(@NonNull RequestViewHolder holder, int position) {
         Requests request = requestsList.get(position);
 
-        holder.idTextView.setText("Sender: "+request.getSender());
+        holder.idTextView.setText(str+request.getSender());
         holder.typeTextView.setText("Type: "+type);
         holder.reasonTextView.setText(request.getReason());
         holder.approve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "Approved! :D", Toast.LENGTH_SHORT).show();
-                String sender= request.getSender();
-                reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users");
-
+                reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(request.getSender()).child("requestHistory");
+                reference.child(request.getUID()).child("status").setValue("Approved! :D");
+                //Remove node from firebase
+                db= FirebaseDatabase.getInstance().getReference("Data").child("Faculty").child("users").child(ID).child(type);
+                db.child(request.getSender()).removeValue();
+                //reload the activity
+                f_requests activity= (f_requests) v.getContext();
+                activity.recreate();
             }
         });
         holder.deny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "Denied! :C", Toast.LENGTH_SHORT).show();
-
+                reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(request.getSender()).child("requestHistory");
+                reference.child(request.getUID()).child("status").setValue("Denied! :C");
+                //remove node from firebase
+                db= FirebaseDatabase.getInstance().getReference("Data").child("Faculty").child("users").child(ID).child(type);
+                db.child(request.getSender()).removeValue();
+                //reload the activity
+                f_requests activity= (f_requests) v.getContext();
+                activity.recreate();
             }
         });
 
