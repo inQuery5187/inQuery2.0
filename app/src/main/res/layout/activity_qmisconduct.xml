@@ -128,7 +128,7 @@
             app:srcCompat="@drawable/button_medium" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/studentBtnText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit"
