@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
     RecyclerView recyclerView;
     DatabaseReference reference;
     TextView logout;
+    ImageView profileBtn;
     private static final String SHARED_PREFS= "sharedPrefs";
 
     @Override
@@ -50,6 +52,7 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         recyclerView= (RecyclerView) findViewById(R.id.requestHistoryView);
         recyclerView.setVisibility(View.INVISIBLE);
+        profileBtn = findViewById(R.id.profileBtn);
 
         // drawer layout instance to toggle the menu icon to open
         // drawer and back button to close drawer
@@ -94,7 +97,13 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
             Log.d("EXCP", e.toString());
         }
 
-
+profileBtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(s_home.this, s_profile.class);
+        startActivity(intent);
+    }
+});
 
 //        logout.setOnClickListener(new View.OnClickListener() {
 //            @Override
