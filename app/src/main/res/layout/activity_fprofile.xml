@@ -1,117 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".f_signup">
+    tools:context=".s_profile">
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="44dp"
-        android:fontFamily="@font/montserrat"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColor="#7268A6"
-        android:textColorHint="#757575"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textviewusername"
-        app:layout_constraintTop_toBottomOf="@+id/epf_background"
-        tools:ignore="TouchTargetSizeCheck" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/epf_background"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/montserrat"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColor="#7268A6"
-        android:textColorHint="#757575"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textviewname"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="TouchTargetSizeCheck" />
+        <ImageView
+            android:id="@+id/backgroundTop"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/backgroundtop" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="365dp"
-        android:layout_height="116dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="23dp"
-        android:fontFamily="@font/montserrat"
-        android:gravity="center"
-        android:text="Faculty Profile"
-        android:textColor="#7268A6"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="FACULTY PROFILE"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/backgroundTop"
+            app:layout_constraintEnd_toEndOf="@+id/backgroundTop"
+            app:layout_constraintStart_toStartOf="@+id/backgroundTop"
+            app:layout_constraintTop_toTopOf="@id/backgroundTop" />
 
-    <Button
-        android:id="@+id/requests"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#5D5588"
-        android:fontFamily="@font/montserrat"
-        android:text="Requests"
-        android:textColor="#FFFFFF"
-        app:cornerRadius="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.101" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/profileBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/profilebox"
+            android:minHeight="400dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backgroundTop">
 
-    <TextView
-        android:id="@+id/textviewname"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Name:"
-        android:textColor="#7268A6"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <TextView
+                android:id="@+id/studentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="85dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Placeholder Name"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/profileBox"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toTopOf="@+id/profileBox" />
 
-    <TextView
-        android:id="@+id/textviewusername"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Username:"
-        android:textColor="#7268A6"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textviewname" />
+            <TextView
+                android:id="@+id/studentUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Faculty Code"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/profileBox"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/studentName" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="#5D5588"
-        android:elevation="25dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Logout"
-        android:textColor="#FFFFFF"
-        app:cornerRadius="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+            <TextView
+                android:id="@+id/course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Department:"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/studentUsername" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/courseEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/montserrat"
+                android:text="course"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/studentUsername" />
+
+            <TextView
+                android:id="@+id/branch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Designation:"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/course" />
+
+            <TextView
+                android:id="@+id/branchEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="branch"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/courseEntry" />
+
+            <TextView
+                android:id="@+id/yearnSec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Phone number:"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/branch" />
+
+            <TextView
+                android:id="@+id/yearnSecEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="yearnsec"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/branchEntry" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="Email:"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="20dp"
+                tools:layout_editor_absoluteY="288dp" />
+
+            <TextView
+                android:id="@+id/emailEntry"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="tt******************@abes.ac.in"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="150dp"
+                tools:layout_editor_absoluteY="288dp" />
+
+            <Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="39dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/logoutbtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/emailEntry" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/profilePicBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backgroundTop"
+            app:srcCompat="@drawable/background_pic" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/text"
+            android:text="version 0.1.0"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileBox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

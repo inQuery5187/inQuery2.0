@@ -29,9 +29,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class qleave extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
-    TextView teachersel, singleDate;
+    TextView teachersel, btPickDate;
     DatabaseReference reference, db;
-    ImageView btPickDate, submit;
+    ImageView submit;
     EditText reason;
     String[] listItems;
     boolean[] checkedItems;
@@ -46,8 +46,7 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qleave);
         teachersel = findViewById(R.id.receiver);
-        btPickDate = findViewById(R.id.btPickDate);
-        singleDate = findViewById(R.id.Leave);
+        btPickDate = findViewById(R.id.Leave);
         submit= findViewById(R.id.lsubmit);
         reason= findViewById(R.id.rreason);
         SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -61,7 +60,7 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
                     Set<String> adding= new HashSet<String>(toAdd);
                     toAdd= new ArrayList<>(adding);
                     submit.setImageResource(R.drawable.button_medium_dark);
-                    valDate= singleDate.getText().toString().trim();
+                    valDate= btPickDate.getText().toString().trim();
                     valReason= reason.getText().toString().trim();
                     db = FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID).child("requestHistory");
                     String uid= db.push().getKey();
@@ -189,6 +188,6 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
         mCalendar.set(Calendar.MONTH, month);
         mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(mCalendar.getTime());
-        singleDate.setText(selectedDate);
+        btPickDate.setText(selectedDate);
     }
 }
