@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_signup"
-    tools:context=".s_signup">
+    android:background="#F7F6FD"
+    tools:context=".s_completesignup">
 
     <TextView
         android:id="@+id/signup_student"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="180dp"
         android:fontFamily="@font/montserrat"
-        android:text="SIGN UP\nAS STUDENT"
+        android:text="COMPLETE YOUR PROFILE"
         android:textColor="@color/text"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,10 +25,11 @@
         android:id="@+id/name"
         android:layout_width="290dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/background_et"
         android:ems="10"
-        android:hint="admission number"
+        android:hint="Roll number"
+        android:elevation="25dp"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
@@ -36,7 +37,6 @@
         android:textColor="@color/text"
         android:textColorHint="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup_student"
         tools:ignore="TouchTargetSizeCheck" />
@@ -45,9 +45,10 @@
         android:id="@+id/iconUsername"
         android:layout_width="22dp"
         android:layout_height="22dp"
-        app:layout_constraintHorizontal_bias="0.925"
+        android:elevation="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/name"
         app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="@+id/name"
         app:layout_constraintTop_toTopOf="@+id/name"
         app:srcCompat="@drawable/icon_profile" />
@@ -60,7 +61,8 @@
         android:background="@drawable/background_et"
         android:drawablePadding="25dp"
         android:ems="10"
-        android:hint="repeat password"
+        android:hint="Year &amp; section"
+        android:elevation="25dp"
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:paddingLeft="20dp"
@@ -73,6 +75,48 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
+        android:id="@+id/cpwd2"
+        android:layout_width="290dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="25dp"
+        android:ems="10"
+        android:hint="Phone number"
+        android:elevation="25dp"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingRight="70dp"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpwd"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/cpwd3"
+        android:layout_width="290dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="25dp"
+        android:ems="10"
+        android:hint="Email"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:elevation="25dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="70dp"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpwd2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
         android:id="@+id/userPwd"
         android:layout_width="290dp"
         android:layout_height="48dp"
@@ -80,8 +124,9 @@
         android:background="@drawable/background_et"
         android:drawablePadding="25dp"
         android:ems="10"
-        android:hint="@string/password_signup"
+        android:hint="Branch"
         android:importantForAutofill="no"
+        android:elevation="25dp"
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingRight="70dp"
@@ -92,27 +137,6 @@
         app:layout_constraintTop_toBottomOf="@+id/epf_background"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <ImageView
-        android:id="@+id/icon_pwd"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        app:layout_constraintHorizontal_bias="0.925"
-        app:layout_constraintBottom_toBottomOf="@+id/userPwd"
-        app:layout_constraintEnd_toEndOf="@+id/userPwd"
-        app:layout_constraintStart_toStartOf="@+id/userPwd"
-        app:layout_constraintTop_toTopOf="@+id/userPwd"
-        android:src="@drawable/icon_visible"/>
-    <ImageView
-        android:id="@+id/cpwd_img"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        app:layout_constraintHorizontal_bias="0.925"
-        app:layout_constraintBottom_toBottomOf="@+id/cpwd"
-        app:layout_constraintEnd_toEndOf="@+id/cpwd"
-        app:layout_constraintStart_toStartOf="@+id/cpwd"
-        app:layout_constraintTop_toTopOf="@+id/cpwd"
-        android:src="@drawable/icon_visible"/>
-
     <EditText
         android:id="@+id/epf_background"
         android:layout_width="290dp"
@@ -120,7 +144,8 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/background_et"
         android:ems="10"
-        android:hint="full name"
+        android:hint="Course"
+        android:elevation="25dp"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
@@ -136,31 +161,85 @@
         android:id="@+id/iconName"
         android:layout_width="22dp"
         android:layout_height="22dp"
-        app:layout_constraintHorizontal_bias="0.925"
+        android:elevation="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/epf_background"
         app:layout_constraintEnd_toEndOf="@+id/epf_background"
+        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="@+id/epf_background"
         app:layout_constraintTop_toTopOf="@+id/epf_background"
+        app:layout_constraintVertical_bias="0.576"
+        app:srcCompat="@drawable/icon_profile" />
+
+    <ImageView
+        android:id="@+id/iconName2"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:elevation="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/userPwd"
+        app:layout_constraintEnd_toEndOf="@+id/userPwd"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="@+id/userPwd"
+        app:layout_constraintTop_toTopOf="@+id/userPwd"
+        app:srcCompat="@drawable/icon_profile" />
+
+    <ImageView
+        android:id="@+id/iconName3"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:elevation="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cpwd"
+        app:layout_constraintEnd_toEndOf="@+id/cpwd"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="@+id/cpwd"
+        app:layout_constraintTop_toTopOf="@+id/cpwd"
+        app:srcCompat="@drawable/icon_profile" />
+
+    <ImageView
+        android:id="@+id/iconName4"
+        android:layout_width="22dp"
+        android:elevation="25dp"
+        android:layout_height="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cpwd2"
+        app:layout_constraintEnd_toEndOf="@+id/cpwd2"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="@+id/cpwd2"
+        app:layout_constraintTop_toTopOf="@+id/cpwd2"
+        app:layout_constraintVertical_bias="0.576"
+        app:srcCompat="@drawable/icon_profile" />
+
+    <ImageView
+        android:id="@+id/iconName5"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cpwd3"
+        app:layout_constraintEnd_toEndOf="@+id/cpwd3"
+        android:elevation="25dp"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="@+id/cpwd3"
+        app:layout_constraintTop_toTopOf="@+id/cpwd3"
+        app:layout_constraintVertical_bias="0.538"
         app:srcCompat="@drawable/icon_profile" />
 
     <ImageView
         android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="72dp"
+        android:elevation="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cpwd"
+        app:layout_constraintTop_toBottomOf="@+id/cpwd3"
         app:srcCompat="@drawable/button_medium" />
 
     <TextView
         android:id="@+id/facultyBtnText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textSize="16dp"
         android:fontFamily="@font/montserrat"
+        android:text="Submit"
         android:textColor="@color/background"
+        android:textSize="16dp"
+        android:elevation="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/signUp"
         app:layout_constraintEnd_toEndOf="@+id/signUp"

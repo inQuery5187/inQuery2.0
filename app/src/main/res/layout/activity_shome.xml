@@ -94,17 +94,6 @@
             app:layout_constraintStart_toStartOf="@+id/backgroundRectangle"
             app:layout_constraintTop_toTopOf="@+id/backgroundRectangle" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/querySelect"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/backgroundRectangle"
-            app:layout_constraintEnd_toEndOf="@+id/backgroundRectangle"
-            app:layout_constraintStart_toStartOf="@+id/backgroundRectangle"
-            app:layout_constraintTop_toBottomOf="@+id/generateQuery" />
-
         <TextView
             android:id="@+id/requestHistory"
             android:layout_width="wrap_content"
@@ -131,6 +120,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/requestHistory" />
+
+        <ListView
+            android:layout_width="391dp"
+            android:layout_height="184dp"
+            android:id="@+id/horizontal_list"
+            app:layout_constraintBottom_toBottomOf="@+id/backgroundRectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="@+id/backgroundRectangle"
+            app:layout_constraintTop_toBottomOf="@+id/generateQuery"
+            app:layout_constraintVertical_bias="0.233" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

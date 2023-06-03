@@ -5,19 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/color"
-    android:background="@color/background"
+    android:background="@drawable/background_main"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/ImgBackgroundMain"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/background_main" />
 
     <ImageView
         android:id="@+id/mainLogo"
