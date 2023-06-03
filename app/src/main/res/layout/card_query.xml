@@ -3,82 +3,128 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="#75D2D2D2"
-    app:cardCornerRadius="25dp"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp"
+    app:cardMaxElevation="10dp"
+    app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
-        android:id="@+id/cardBackground"
-        android:layout_width="385dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:elevation="40dp"
-        android:padding="15dp">
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textType"
+            android:id="@+id/queryType"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="28dp"
+            android:textColor="@color/text"
             android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"
             android:text="Query Type:"
-            android:textColor="@color/text"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"/>
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/sender"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textType"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="28dp"
+            android:textColor="@color/text"
             android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"
             android:text="Sender:"
-            android:textColor="@color/text"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/queryType"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"/>
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/subject"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView23"
-            android:layout_alignParentStart="true"
+            android:layout_height="28dp"
+            android:textColor="@color/text"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:text="Subject:"
+            android:layout_below="@+id/sender"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <ImageView
+            android:id="@+id/approveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/button_approve"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignStart="@+id/approveBtn"
+            android:layout_alignTop="@+id/approveBtn"
+            android:layout_alignEnd="@+id/approveBtn"
+            android:layout_alignBottom="@+id/approveBtn"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
             android:fontFamily="@font/montserrat"
-            android:text="Subject:"
-            android:textColor="@color/text"
+            android:text="Approve"
+            android:textColor="@color/white"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/approveDeny"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_below="@id/approveBtn"
+            android:layout_marginTop="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Approved :)"
+            android:textColor="@color/accent1"
+            android:textSize="16sp"
+            android:gravity="center"/>
 
         <ImageView
-            android:id="@+id/imageView11"
+            android:id="@+id/denyBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
+            android:src="@drawable/button_deny"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            app:srcCompat="@drawable/button_approve" />
+            android:layout_below="@+id/approveDeny"
+            android:layout_marginBottom="15dp"/>
 
-        <ImageView
-            android:id="@+id/imageView13"
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="117dp"
-            app:srcCompat="@drawable/button_deny" />
+            android:layout_height="28dp"
+            android:layout_alignStart="@+id/denyBtn"
+            android:layout_alignTop="@+id/denyBtn"
+            android:layout_alignEnd="@+id/denyBtn"
+            android:layout_alignBottom="@+id/denyBtn"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Deny"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center"/>
 
 
     </RelativeLayout>
-
 </androidx.cardview.widget.CardView>
