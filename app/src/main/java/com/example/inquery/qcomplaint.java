@@ -1,5 +1,7 @@
 package com.example.inquery;
 
+import static java.lang.String.valueOf;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,6 +39,7 @@ public class qcomplaint extends AppCompatActivity {
     ArrayList<String> userArr= new ArrayList<String>();
     ArrayList<String> toAdd= new ArrayList<String>();
     String valAgainst, valReason, ID;
+    int no;
     private static final String SHARED_PREFS= "sharedPrefs";
 
     @Override
@@ -59,13 +63,20 @@ public class qcomplaint extends AppCompatActivity {
                     submit.setImageResource(R.drawable.button_medium_dark);
                     valAgainst= against.getText().toString().trim();
                     valReason= reason.getText().toString().trim();
+                    reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID).child("requestHistory");
+                    String uid= reference.push().getKey();
                     for(String str: toAdd){
                         db.child(str).child("complaints").child(ID).child("against").setValue(valAgainst);
                         db.child(str).child("complaints").child(ID).child("from").setValue(ID);
                         db.child(str).child("complaints").child(ID).child("reason").setValue(valReason);
+                        db.child(str).child("complaints").child(ID).child("UID").setValue(uid);
                         db.child(str).child("complaints").child(ID).child("status").setValue("Pending c:");
                     }
-                    reference= FirebaseDatabase.getInstance().getReference("Data").child("Child");
+                    HashMap<String, String> map= new HashMap<>();
+                    map.put("type", "complaint");
+                    map.put("status", "Pending c:");
+                    map.put("reason", valReason);
+                    reference.child(uid).setValue(map);
                     Toast.makeText(qcomplaint.this, "Data submitted", Toast.LENGTH_SHORT).show();
                     finish();
                 }
@@ -79,8 +90,8 @@ public class qcomplaint extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    nameArr.add(String.valueOf(dataSnapshot.child("name").getValue()));
-                    userArr.add(String.valueOf(dataSnapshot.child("username").getValue()));
+                    nameArr.add(valueOf(dataSnapshot.child("name").getValue()));
+                    userArr.add(valueOf(dataSnapshot.child("username").getValue()));
                 }
                 listItems=getValue();
                 checkedItems= new boolean[listItems.length];

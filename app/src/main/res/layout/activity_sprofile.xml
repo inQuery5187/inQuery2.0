@@ -1,246 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".queries">
+    tools:context=".s_profile">
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/my_drawer_layout1"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        tools:ignore="HardcodedText">
+        android:layout_height="wrap_content">
 
-        <!-- this the navigation view which draws and shows the navigation drawer -->
-        <!-- include the menu created in the menu folder -->
+        <ImageView
+            android:id="@+id/backgroundTop"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/backgroundtop" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="STUDENT PROFILE"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/backgroundTop"
+            app:layout_constraintEnd_toEndOf="@+id/backgroundTop"
+            app:layout_constraintStart_toStartOf="@+id/backgroundTop"
+            app:layout_constraintTop_toTopOf="@id/backgroundTop" />
 
-            <!--    <ImageView-->
-            <!--        android:id="@+id/doc"-->
-            <!--        android:layout_width="wrap_content"-->
-            <!--        android:layout_height="wrap_content"-->
-            <!--        android:layout_marginTop="16dp"-->
-            <!--        app:layout_constraintEnd_toEndOf="parent"-->
-            <!--        app:layout_constraintHorizontal_bias="0.497"-->
-            <!--        app:layout_constraintStart_toStartOf="parent"-->
-            <!--        app:layout_constraintTop_toBottomOf="@+id/leave"-->
-            <!--        app:srcCompat="@drawable/rectangular_button" />-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/profileBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="20dp"
+            android:minHeight="400dp"
+            android:paddingBottom="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backgroundTop"
+            android:background="@drawable/profilebox">
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="85dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/backgroundtop" />
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Placeholder Name"
+            android:textSize="20sp"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/profileBox"
+            app:layout_constraintStart_toStartOf="@+id/profileBox"
+            app:layout_constraintTop_toTopOf="@+id/profileBox" />
+
+        <TextView
+            android:id="@+id/studentUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Admission Number"
+            android:textSize="16sp"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/profileBox"
+            app:layout_constraintStart_toStartOf="@+id/profileBox"
+            app:layout_constraintTop_toBottomOf="@+id/studentName" />
+
+        <TextView
+            android:id="@+id/course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Course:"
+            android:textSize="16sp"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintStart_toStartOf="@+id/profileBox"
+            app:layout_constraintTop_toBottomOf="@+id/studentUsername" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/courseEntry"
                 android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:layout_alignBottom="@+id/imageView2"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="23dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/montserrat"
-                android:gravity="center"
-                android:text="PROFILE"
-                android:textColor="#7268A6"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:layout_below="@+id/imageView2"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="60dp"
-                android:layout_toEndOf="@+id/textview69"
-                android:text="name"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/montserrat"
-                android:textSize="18sp"
-                android:textColor="#7268A6" />
+                android:text="course"
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:layout_marginLeft="150dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/studentUsername" />
 
             <TextView
-                android:id="@+id/textview69"
+                android:id="@+id/branch"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/imageView2"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Name:"
-                android:textColor="#7268A6"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="Branch:"
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/course" />
+
+            <TextView
+                android:id="@+id/branchEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="branch"
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:layout_marginLeft="150dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/courseEntry" />
+
+            <TextView
+                android:id="@+id/yearnSec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Year and Sec:"
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/branch" />
+
+            <TextView
+                android:id="@+id/yearnSecEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="yearnsec"
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:layout_marginLeft="150dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/branchEntry" />
 
             <TextView
                 android:id="@+id/rollNo"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:layout_below="@+id/textview96"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="29dp"
-                android:layout_toEndOf="@+id/textview"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/montserrat"
-                android:text="university roll no."
-                android:textColor="#7268A6"
-                android:textSize="18sp" />
+                android:text="Roll No.:"
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/yearnSec" />
+
+            <TextView
+                android:id="@+id/rollNoEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="roll no."
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:layout_marginLeft="150dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/yearnSecEntry" />
 
             <TextView
                 android:id="@+id/phoneNo"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/rollNo"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="28dp"
-                android:layout_toEndOf="@+id/textview2"
-                android:fontFamily="@font/montserrat"
-                android:text="phone no."
-                android:textColor="#7268A6"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/name5"
-                android:layout_width="250dp"
-                android:minHeight="48dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/phoneNo"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="28dp"
-                android:layout_toEndOf="@+id/textview3"
-                android:fontFamily="@font/montserrat"
-                android:text="email"
-                android:textColor="#7268A6"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/userId"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:layout_below="@+id/name"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="28sp"
-                android:layout_toEndOf="@+id/textview96"
-                android:fontFamily="@font/montserrat"
-                android:text="admission no."
-                android:textColor="#7268A6"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textview96"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/name"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="28dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Admission No.:"
-                android:textColor="#7268A6"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textview"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/userId"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="28dp"
-                android:fontFamily="@font/montserrat"
-                android:text="University Roll  No.:"
-                android:textColor="#7268A6"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textview2"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/rollNo"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Phone No.:"
-                android:textColor="#7268A6"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/rollNo" />
 
             <TextView
-                android:id="@+id/textview3"
+                android:id="@+id/phoneNoEntry"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/phoneNo"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="28dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="********09"
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:layout_marginLeft="150dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/rollNoEntry" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Email:"
-                android:textColor="#7268A6"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/name5"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="133dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="155dp"
-                android:layout_marginBottom="134dp"
-                app:srcCompat="@drawable/button_medium" />
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNo" />
 
             <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
+                android:id="@+id/emailEntry"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/imageView5"
-                android:layout_alignEnd="@+id/imageView5"
-                android:layout_alignBottom="@+id/imageView5"
-                android:layout_marginStart="31dp"
-                android:layout_marginEnd="34dp"
-                android:layout_marginBottom="13dp"
-                android:text="TextView" />
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="tt******************@abes.ac.in"
+                android:textSize="16sp"
+                android:textColor="@color/text"
+                android:layout_marginLeft="150dp"
+                app:layout_constraintStart_toStartOf="@+id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNoEntry" />
+
+            <Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/logoutbtn"
+                app:layout_constraintEnd_toEndOf="@id/profileBox"
+                app:layout_constraintTop_toBottomOf="@+id/emailEntry" />
 
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
+        <ImageView
+            android:id="@+id/profilePicBg"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:menu="@menu/navigation_menu" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backgroundTop"
+            app:srcCompat="@drawable/background_pic" />
 
-    </androidx.drawerlayout.widget.DrawerLayout>
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/text"
+            android:text="version 0.1.0"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileBox" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

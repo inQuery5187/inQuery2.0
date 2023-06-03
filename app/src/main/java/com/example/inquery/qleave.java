@@ -24,12 +24,13 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class qleave extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     TextView teachersel, singleDate;
-    DatabaseReference reference;
+    DatabaseReference reference, db;
     ImageView btPickDate, submit;
     EditText reason;
     String[] listItems;
@@ -46,7 +47,7 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
         setContentView(R.layout.activity_qleave);
         teachersel = findViewById(R.id.receiver);
         btPickDate = findViewById(R.id.btPickDate);
-        singleDate = findViewById(R.id.fromDate);
+        singleDate = findViewById(R.id.Leave);
         submit= findViewById(R.id.lsubmit);
         reason= findViewById(R.id.rreason);
         SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -62,13 +63,21 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
                     submit.setImageResource(R.drawable.button_medium_dark);
                     valDate= singleDate.getText().toString().trim();
                     valReason= reason.getText().toString().trim();
+                    db = FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID).child("requestHistory");
+                    String uid= db.push().getKey();
                     for(String str: toAdd){
                         reference.child(str).child("leave").child(ID).child("date").setValue(valDate);
                         reference.child(str).child("leave").child(ID).child("from").setValue(ID);
                         reference.child(str).child("leave").child(ID).child("reason").setValue(valReason);
+                        reference.child(str).child("leave").child(ID).child("UID").setValue(uid);
                         reference.child(str).child("leave").child(ID).child("status").setValue("Pending c:");
 
                     }
+                    HashMap<String, String> map= new HashMap<>();
+                    map.put("type", "leave");
+                    map.put("status", "Pending c:");
+                    map.put("reason", valReason);
+                    db.child(uid).setValue(map);
 
                     Toast.makeText(qleave.this, "Data submitted", Toast.LENGTH_SHORT).show();
                 }

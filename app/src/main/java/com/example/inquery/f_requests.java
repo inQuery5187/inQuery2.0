@@ -98,12 +98,12 @@ public class f_requests extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot childSnapshot : snapshot.getChildren()) {
-                    Requests req= new Requests("", "", "");
+                    Requests req= new Requests("", "", "", "");
                     req.type=type;
                     req.reason= childSnapshot.child("reason").getValue(String.class);
                     req.sender= childSnapshot.getKey();
+                    req.UID= childSnapshot.child("UID").getValue(String.class);
                     requ.add(req);
-                    Log.d("REQUESTS", requ.get(0).getReason());
                 }
                 setRecyclerView(requ, type);
             }
@@ -119,7 +119,7 @@ public class f_requests extends AppCompatActivity {
     private void setRecyclerView(List<Requests> requ, String type) {
         recyclerView= findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        RequestsAdapter requestsAdapter= new RequestsAdapter(requ, type);
+        RequestsAdapter requestsAdapter= new RequestsAdapter(requ, type, "Sender: ", ID, "faculty");
         recyclerView.setAdapter(requestsAdapter);
     }
 

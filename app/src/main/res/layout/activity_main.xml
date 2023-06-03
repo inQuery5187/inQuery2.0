@@ -1,41 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/color"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_background"
+    android:id="@+id/color"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:id="@+id/ImgBackgroundMain"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/background_main" />
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="220dp"
+        android:layout_height="286dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_main" />
+        app:srcCompat="@drawable/inquerylogo" />
 
     <ImageView
         android:id="@+id/facultyBtn"
-        android:layout_width="147dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="256dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/button_medium" />
+        app:layout_constraintTop_toBottomOf="@+id/mainLogo"
+        app:srcCompat="@drawable/button_large" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/facultyBtnText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
         android:text="Faculty"
-        android:textSize="16dp"
         android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/facultyBtn"
         app:layout_constraintEnd_toEndOf="@+id/facultyBtn"
         app:layout_constraintStart_toStartOf="@+id/facultyBtn"
@@ -43,22 +56,24 @@
 
     <ImageView
         android:id="@+id/studentBtn"
-        android:layout_width="148dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="256dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/facultyBtn"
-        app:srcCompat="@drawable/button_medium" />
+        app:srcCompat="@drawable/button_large" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/studentBtnText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
         android:text="Student"
-        android:textSize="16dp"
         android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/studentBtn"
         app:layout_constraintEnd_toEndOf="@+id/studentBtn"
         app:layout_constraintStart_toStartOf="@+id/studentBtn"

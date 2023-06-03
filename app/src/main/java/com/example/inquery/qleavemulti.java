@@ -40,7 +40,7 @@ public class qleavemulti extends AppCompatActivity implements DatePickerDialog.O
         teachersel = findViewById(R.id.receiver);
         btFromDate = findViewById(R.id.btFromDate);
         btToDate = findViewById(R.id.btToDate);
-        fromDate = findViewById(R.id.fromDate);
+        fromDate = findViewById(R.id.Leave);
         toDate = findViewById(R.id.toDate);
 
         btFromDate.setOnClickListener(new View.OnClickListener() {

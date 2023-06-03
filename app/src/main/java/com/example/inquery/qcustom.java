@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,7 +29,7 @@ public class qcustom extends AppCompatActivity {
     ImageView submit;
     TextView dialog;
     EditText against, query;
-    DatabaseReference db;
+    DatabaseReference db, reference;
     String[] listItems;
     boolean[] checkedItems;
     ArrayList<Integer> mUserItems= new ArrayList<Integer>();
@@ -36,6 +37,7 @@ public class qcustom extends AppCompatActivity {
     ArrayList<String> userArr= new ArrayList<String>();
     ArrayList<String> toAdd= new ArrayList<String>();
     String valQuery, ID;
+    int no;
     private static final String SHARED_PREFS= "sharedPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,14 +58,23 @@ public class qcustom extends AppCompatActivity {
                     toAdd= new ArrayList<>(adding);
                     submit.setImageResource(R.drawable.button_medium_dark);
                     valQuery = query.getText().toString().trim();
+                    reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID).child("requestHistory");
+                    String uid= reference.push().getKey();
                     for(String str: toAdd){
                         db.child(str).child("custom").child(ID).child("from").setValue(ID);
                         db.child(str).child("custom").child(ID).child("reason").setValue(valQuery);
+                        db.child(str).child("custom").child(ID).child("UID").setValue(uid);
                         db.child(str).child("custom").child(ID).child("status").setValue("Pending c:");
 
                     }
 
+                    HashMap<String, String> map= new HashMap<>();
+                    map.put("type", "custom");
+                    map.put("status", "Pending c:");
+                    map.put("reason", valQuery);
+                    reference.child(uid).setValue(map);
                     Toast.makeText(qcustom.this, "Data submitted", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 else{
                     Toast.makeText(qcustom.this, "Please select the faculty", Toast.LENGTH_SHORT).show();

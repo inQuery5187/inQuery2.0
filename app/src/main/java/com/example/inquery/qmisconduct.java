@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class qmisconduct extends AppCompatActivity {
     ImageView submit;
     TextView dialog;
     EditText action, apology;
-    DatabaseReference db;
+    DatabaseReference db, reference;
     String[] listItems;
     boolean[] checkedItems;
     ArrayList<Integer> mUserItems= new ArrayList<Integer>();
@@ -59,14 +60,21 @@ public class qmisconduct extends AppCompatActivity {
                     submit.setImageResource(R.drawable.button_medium_dark);
                     valAction = action.getText().toString().trim();
                     valApology = apology.getText().toString().trim();
+                    reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID).child("requestHistory");
+                    String uid= reference.push().getKey();
                     for(String str: toAdd){
                         db.child(str).child("misconduct").child(ID).child("reason").setValue(valAction);
                         db.child(str).child("misconduct").child(ID).child("from").setValue(ID);
                         db.child(str).child("misconduct").child(ID).child("apology").setValue(valApology);
+                        db.child(str).child("misconduct").child(ID).child("UID").setValue(uid);
                         db.child(str).child("misconduct").child(ID).child("status").setValue("Pending c:");
 
                     }
-
+                    HashMap<String, String> map= new HashMap<>();
+                    map.put("type", "misconduct");
+                    map.put("status", "Pending c:");
+                    map.put("reason", valAction);
+                    reference.child(uid).setValue(map);
                     Toast.makeText(qmisconduct.this, "Data submitted", Toast.LENGTH_SHORT).show();
                 }
                 else{

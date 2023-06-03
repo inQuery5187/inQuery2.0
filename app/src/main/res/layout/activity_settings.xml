@@ -28,7 +28,7 @@
                 app:srcCompat="@drawable/backgroundtop" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textView17"
                 android:layout_width="139dp"
                 android:layout_height="42dp"
                 android:layout_alignBottom="@+id/imageView2"
