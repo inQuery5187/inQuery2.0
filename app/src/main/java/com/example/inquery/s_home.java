@@ -40,7 +40,7 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
     RecyclerView recyclerView;
     DatabaseReference reference;
     TextView logout;
-    ImageView profileBtn;
+    TextView profileBtn;
     private static final String SHARED_PREFS= "sharedPrefs";
 
     @Override

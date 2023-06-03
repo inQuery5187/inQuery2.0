@@ -83,7 +83,7 @@ public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.Reques
             holder.typeTextView.setText("Type: "+request.getType());
             holder.reasonTextView.setText(request.getReason());
             holder.approve.setVisibility(View.GONE);
-            holder.deny.setVisibility(View.GONE);
+            //holder.deny.setVisibility(View.GONE);
         }
 
 
@@ -104,11 +104,11 @@ public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.Reques
         public RequestViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            idTextView = itemView.findViewById(R.id.textSender);
-            typeTextView = itemView.findViewById(R.id.textType);
-            reasonTextView = itemView.findViewById(R.id.textReason);
-            approve= itemView.findViewById(R.id.approve);
-            deny = itemView.findViewById(R.id.deny);
+            idTextView = itemView.findViewById(R.id.sender);
+            typeTextView = itemView.findViewById(R.id.queryType);
+            reasonTextView = itemView.findViewById(R.id.subject);
+            approve= itemView.findViewById(R.id.approveDeny);
+            //deny = itemView.findViewById(R.id.denyBtn);
         }
     }
 }

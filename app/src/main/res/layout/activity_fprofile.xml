@@ -49,7 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/backgroundTop">
 
             <TextView
-                android:id="@+id/studentName"
+                android:id="@+id/facultyName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="85dp"
@@ -63,7 +63,7 @@
                 app:layout_constraintTop_toTopOf="@+id/profileBox" />
 
             <TextView
-                android:id="@+id/studentUsername"
+                android:id="@+id/facultyUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -74,10 +74,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/profileBox"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
-                app:layout_constraintTop_toBottomOf="@+id/studentName" />
+                app:layout_constraintTop_toBottomOf="@+id/facultyName" />
 
             <TextView
-                android:id="@+id/course"
+                android:id="@+id/dept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -88,23 +88,23 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
-                app:layout_constraintTop_toBottomOf="@+id/studentUsername" />
+                app:layout_constraintTop_toBottomOf="@+id/facultyUsername" />
 
             <TextView
-                android:id="@+id/courseEntry"
+                android:id="@+id/deptEntry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/montserrat"
-                android:text="course"
+                android:text="department"
                 android:textColor="@color/text"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
-                app:layout_constraintTop_toBottomOf="@+id/studentUsername" />
+                app:layout_constraintTop_toBottomOf="@+id/facultyUsername" />
 
             <TextView
-                android:id="@+id/branch"
+                android:id="@+id/designation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -115,7 +115,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
-                app:layout_constraintTop_toBottomOf="@+id/course" />
+                app:layout_constraintTop_toBottomOf="@+id/dept" />
 
             <TextView
                 android:id="@+id/branchEntry"
@@ -124,14 +124,14 @@
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/montserrat"
-                android:text="branch"
+                android:text="designation"
                 android:textColor="@color/text"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
-                app:layout_constraintTop_toBottomOf="@+id/courseEntry" />
+                app:layout_constraintTop_toBottomOf="@+id/deptEntry" />
 
             <TextView
-                android:id="@+id/yearnSec"
+                android:id="@+id/phoneNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -142,16 +142,16 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
-                app:layout_constraintTop_toBottomOf="@+id/branch" />
+                app:layout_constraintTop_toBottomOf="@+id/designation" />
 
             <TextView
-                android:id="@+id/yearnSecEntry"
+                android:id="@+id/phoneNumEntry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/montserrat"
-                android:text="yearnsec"
+                android:text="********09"
                 android:textColor="@color/text"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
@@ -161,24 +161,28 @@
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Email:"
                 android:textColor="@color/text"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="20dp"
-                tools:layout_editor_absoluteY="288dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNum" />
 
             <TextView
                 android:id="@+id/emailEntry"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="15dp"
                 android:text="tt******************@abes.ac.in"
                 android:textColor="@color/text"
                 android:textSize="16sp"
-                tools:layout_editor_absoluteX="150dp"
-                tools:layout_editor_absoluteY="288dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumEntry" />
 
             <Button
                 android:id="@+id/logoutBtn"
