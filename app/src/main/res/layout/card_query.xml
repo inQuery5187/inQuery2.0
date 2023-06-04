@@ -57,73 +57,86 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"/>
 
-        <ImageView
-            android:id="@+id/approveBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/button_approve"
-            android:layout_marginRight="15dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="15dp"/>
 
         <TextView
+            android:id="@+id/approve"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:layout_alignStart="@+id/approveBtn"
-            android:layout_alignTop="@+id/approveBtn"
-            android:layout_alignEnd="@+id/approveBtn"
-            android:layout_alignBottom="@+id/approveBtn"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="18dp"
             android:layout_marginBottom="0dp"
+            android:background="@drawable/button_approve"
             android:fontFamily="@font/montserrat"
+            android:gravity="center"
             android:text="Approve"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            android:gravity="center"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/approveDeny"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:layout_below="@id/approveBtn"
-            android:layout_marginTop="12dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Approved :)"
-            android:textColor="@color/accent1"
-            android:textSize="16sp"
-            android:gravity="center"/>
-
-        <ImageView
-            android:id="@+id/denyBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/button_deny"
-            android:layout_marginRight="15dp"
+            android:layout_below="@+id/approve"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/approveDeny"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="Approved :)"
+            android:textColor="@color/accent1"
+            android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/denyApprove"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:layout_alignStart="@+id/denyBtn"
-            android:layout_alignTop="@+id/denyBtn"
-            android:layout_alignEnd="@+id/denyBtn"
-            android:layout_alignBottom="@+id/denyBtn"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
+            android:layout_below="@+id/approve"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginRight="27dp"
             android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="Denied :("
+            android:textColor="@color/denied"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/requestPending"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_below="@+id/approve"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginRight="27dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="Pending :)"
+            android:textColor="#B5B5B5"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/deny"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_below="@+id/approveDeny"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/button_deny"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
             android:text="Deny"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            android:gravity="center"/>
+            android:textSize="16sp" />
 
 
     </RelativeLayout>

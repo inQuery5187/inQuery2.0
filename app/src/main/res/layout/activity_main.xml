@@ -4,8 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/color"
-    android:background="@drawable/background_main"
+    android:background="@drawable/window_loginbg"
+    android:layout_marginLeft="-10dp"
     tools:context=".MainActivity">
 
 
@@ -14,6 +14,7 @@
         android:layout_width="220dp"
         android:layout_height="286dp"
         android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,8 +22,9 @@
 
     <ImageView
         android:id="@+id/facultyBtn"
-        android:layout_width="256dp"
-        android:layout_height="48dp"
+        android:layout_width="210dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -46,8 +48,9 @@
 
     <ImageView
         android:id="@+id/studentBtn"
-        android:layout_width="256dp"
-        android:layout_height="48dp"
+        android:layout_width="210dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -60,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
+
         android:text="Student"
         android:textColor="#FFFFFF"
         android:textSize="20dp"

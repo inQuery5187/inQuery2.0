@@ -79,11 +79,25 @@ public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.Reques
             });
         }
         else if(user.equals("student")){
-            holder.idTextView.setText(str+request.getStatus());
-            holder.typeTextView.setText("Type: "+request.getType());
-            holder.reasonTextView.setText(request.getReason());
-            holder.approve.setVisibility(View.GONE);
-            holder.deny.setVisibility(View.GONE);
+
+            holder.typeTextView.setText("Query Type: "+request.getType());
+            holder.idTextView.setText("Reason: "+request.getReason());
+            holder.reasonTextView.setVisibility(View.INVISIBLE);
+            holder.approve.setVisibility(View.INVISIBLE);
+            holder.deny.setVisibility(View.INVISIBLE);
+
+            if(request.getStatus().equals("Approved! :D")){
+                holder.showPending.setVisibility(View.INVISIBLE);
+                holder.showDeny.setVisibility(View.INVISIBLE);
+            }
+            else if(request.getStatus().equals("Denied! :C")){
+                holder.showPending.setVisibility(View.INVISIBLE);
+                holder.showApprove.setVisibility(View.INVISIBLE);
+            }
+            else if(request.getStatus().equals("Pending c:")){
+                holder.showApprove.setVisibility(View.INVISIBLE);
+                holder.showDeny.setVisibility(View.INVISIBLE);
+            }
         }
 
 
@@ -100,15 +114,20 @@ public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.Reques
         TextView typeTextView;
         TextView approve;
         TextView deny;
+        TextView showApprove, showDeny, showPending;
 
         public RequestViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            idTextView = itemView.findViewById(R.id.textSender);
-            typeTextView = itemView.findViewById(R.id.textType);
-            reasonTextView = itemView.findViewById(R.id.textReason);
+            idTextView = itemView.findViewById(R.id.sender);
+            typeTextView = itemView.findViewById(R.id.queryType);
+            reasonTextView = itemView.findViewById(R.id.subject);
             approve= itemView.findViewById(R.id.approve);
             deny = itemView.findViewById(R.id.deny);
+            showApprove= itemView.findViewById(R.id.approveDeny);
+            showDeny= itemView.findViewById(R.id.denyApprove);
+            showPending= itemView.findViewById(R.id.requestPending);
+
         }
     }
 }

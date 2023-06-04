@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_login"
@@ -12,7 +11,7 @@
         android:id="@+id/name"
         android:layout_width="290dp"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/background_et"
         android:ems="10"
         android:fontFamily="@font/montserrat"
@@ -22,11 +21,10 @@
         android:minHeight="48dp"
         android:paddingLeft="20dp"
         android:paddingRight="70dp"
-        android:textStyle="bold"
         android:textColor="@color/text"
         android:textColorHint="@color/text"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome_student" />
 
@@ -42,12 +40,12 @@
         android:hint="password"
         android:importantForAutofill="no"
         android:inputType="textPassword"
-        android:textStyle="bold"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
         android:paddingRight="70dp"
         android:textColor="@color/text"
         android:textColorHint="@color/text"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
@@ -61,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="@+id/userPwd"
         app:layout_constraintTop_toTopOf="@+id/userPwd"
-        app:srcCompat="@drawable/icon_visible"/>
+        app:srcCompat="@drawable/icon_visible" />
 
 
     <ImageView
@@ -91,9 +89,9 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/montserrat"
         android:text="Forgot Password?"
-        android:textStyle="bold"
         android:textColor="@color/denied"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
@@ -118,9 +116,9 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
         android:text="Login"
-        android:textStyle="bold"
         android:textColor="@color/background"
         android:textSize="16dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
         app:layout_constraintEnd_toEndOf="@+id/loginBtn"
         app:layout_constraintStart_toStartOf="@+id/loginBtn"
@@ -130,11 +128,11 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
         android:text="Sign Up"
+        android:textColor="@color/background"
         android:textSize="16dp"
         android:textStyle="bold"
-        android:fontFamily="@font/montserrat"
-        android:textColor="@color/background"
         app:layout_constraintBottom_toBottomOf="@+id/signupBtn"
         app:layout_constraintEnd_toEndOf="@+id/signupBtn"
         app:layout_constraintStart_toStartOf="@+id/signupBtn"
@@ -144,15 +142,15 @@
         android:id="@+id/welcome_student"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/montserrat"
         android:text="WELCOME\nSTUDENT"
         android:textColor="@color/text"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <ImageView
         android:id="@+id/iconUsername"

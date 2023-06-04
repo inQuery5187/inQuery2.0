@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         facultyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                facultyBtn.setImageResource(R.drawable.button_medium_dark);
                 Intent intent= new Intent(MainActivity.this, f_login.class);
                 startActivity(intent);
             }
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         studentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                studentBtn.setImageResource(R.drawable.button_medium_dark);
                 Intent intent= new Intent(MainActivity.this, s_login.class);
                 startActivity(intent);
             }

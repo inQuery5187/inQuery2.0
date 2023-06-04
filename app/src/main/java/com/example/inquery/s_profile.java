@@ -23,19 +23,45 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class s_profile extends AppCompatActivity{
+    TextView name, username, course, branch, yearAndSec, rollNo, phoneNo, email;
     Button logout;
     String ID;
+    DatabaseReference reference;
     private static final String SHARED_PREFS= "sharedPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sprofile);
+        getSupportActionBar().hide();
+        name= findViewById(R.id.studentName);
+        username= findViewById(R.id.studentUsername);
+        course= findViewById(R.id.courseEntry);
+        branch= findViewById(R.id.branchEntry);
+        yearAndSec= findViewById(R.id.yearnSecEntry);
+        rollNo= findViewById(R.id.rollNoEntry);
+        phoneNo= findViewById(R.id.phoneNoEntry);
+        email= findViewById(R.id.emailEntry);
         logout = findViewById(R.id.logoutBtn);
 
         SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         ID= sharedPreferences.getString("sID", "");
 
+        reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID);
+        reference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                DataSnapshot snapshot= task.getResult();
+                name.setText(String.valueOf(snapshot.child("name").getValue()));
+                username.setText(String.valueOf(snapshot.child("username").getValue()));
+                course.setText(String.valueOf(snapshot.child("course").getValue()));
+                branch.setText(String.valueOf(snapshot.child("branch").getValue()));
+                yearAndSec.setText(String.valueOf(snapshot.child("yearAndSec").getValue()));
+                rollNo.setText(String.valueOf(snapshot.child("rollno").getValue()));
+                phoneNo.setText(String.valueOf(snapshot.child("phoneno").getValue()));
+                email.setText(String.valueOf(snapshot.child("email").getValue()));
+            }
+        });
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

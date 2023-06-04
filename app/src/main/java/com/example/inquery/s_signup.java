@@ -20,7 +20,6 @@ public class s_signup extends AppCompatActivity {
     EditText name, userID, userPwd, cpwd;
     ImageView submit, pwdsh, cpwdsh;
     DatabaseReference reference;
-    Data Data;
 
     public static boolean isValidPassword(String password){
         String regex = "^(?=.*[0-9])"
@@ -47,12 +46,10 @@ public class s_signup extends AppCompatActivity {
         pwdsh= findViewById(R.id.icon_pwd);
         cpwdsh= findViewById(R.id.cpwd_img);
 
-        Data=new Data();
         reference= FirebaseDatabase.getInstance().getReference().child("Data").child("Student").child("users");
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                submit.setImageResource(R.drawable.button_medium_dark);
                 String nam = name.getText().toString().trim();
                 String usernam = userID.getText().toString().trim();
                 String p= userPwd.getText().toString();
@@ -61,55 +58,29 @@ public class s_signup extends AppCompatActivity {
                     if (nam!=null){
                         if (isValidPassword(p)){
                             if (p.equals(cp)) {
-                                Data.setName(nam);
-                                Data.setUsername(usernam);
-                                Data.setPwd(p);
-                                reference.child(userID.getText().toString().trim()).setValue(Data);
-                                Toast.makeText(s_signup.this, "You have been registered", Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(s_signup.this, s_login.class);
+                                Bundle bundle= new Bundle();
+                                bundle.putString("name", nam);
+                                bundle.putString("username", usernam);
+                                bundle.putString("pwd", p);
+                                Intent intent = new Intent(s_signup.this, s_completesignup.class);
+                                intent.putExtras(bundle);
                                 startActivity(intent);
                                 finish();
                             }
                             else{
                                 Toast.makeText(s_signup.this, "password and repeat password don't match", Toast.LENGTH_SHORT).show();
-                                final Handler handler = new Handler();
-                                handler.postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        submit.setImageResource(R.drawable.button_medium);
-                                    }
-                                }, 800);
                             }
                         }
                         else{
                             Toast.makeText(s_signup.this, "Please enter a valid password", Toast.LENGTH_SHORT).show();
-                            final Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    submit.setImageResource(R.drawable.button_medium);
-                                }
-                            }, 800);
                         }
                     }
                     else {
                         Toast.makeText(s_signup.this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
-                        final Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                submit.setImageResource(R.drawable.button_medium);
-                            }
-                        }, 800);
                     }
                 }
                 else{
                     Toast.makeText(s_signup.this, "Please enter your correct ID no.", Toast.LENGTH_SHORT).show();
-                    final Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() { submit.setImageResource(R.drawable.button_medium);}
-                    }, 800);
                 }
             }
         });

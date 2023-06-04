@@ -17,9 +17,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,47 +33,59 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class s_home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class s_home extends AppCompatActivity {
 
-    public DrawerLayout drawerLayout;
-    public ActionBarDrawerToggle actionBarDrawerToggle;
-    public NavigationView navigationView;
     String ID;
     int no;
     RecyclerView recyclerView;
     DatabaseReference reference;
-    TextView logout;
-    ImageView profileBtn;
+    RecyclerView listView;
+    TextView profileBtn;
+    ArrayList<Integer> images= new ArrayList<Integer>();
+    ArrayList<String> requests= new ArrayList<>();
     private static final String SHARED_PREFS= "sharedPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shome);
-        setNavigationViewListener();
-//        logout= findViewById(R.id.button);
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        getSupportActionBar().hide();
         recyclerView= (RecyclerView) findViewById(R.id.requestHistoryView);
         recyclerView.setVisibility(View.INVISIBLE);
         profileBtn = findViewById(R.id.profileBtn);
+        listView= findViewById(R.id.horizontal_list);
 
-        // drawer layout instance to toggle the menu icon to open
-        // drawer and back button to close drawer
-        drawerLayout = findViewById(R.id.my_drawer_layout1);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
+        images.add(R.drawable.logo_leave);
+        images.add(R.drawable.logo_complaint);
+        images.add(R.drawable.logo_misconduct);
+        images.add(R.drawable.logo_custom);
+        requests.add("Leave");
+        requests.add("Complaint");
+        requests.add("Misconduct");
+        requests.add("Custom");
 
-        // pass the Open and Close toggle for the drawer layout listener
-        // to toggle the button
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-
-        // to make the Navigation drawer icon always appear on the action bar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        HorizontalListAdapter horizontalListAdapter = new HorizontalListAdapter(this, images, requests);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        listView.setLayoutManager(layoutManager);
+        listView.setAdapter(horizontalListAdapter);
 
         SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         ID= sharedPreferences.getString("sID", "");
 
         reference= FirebaseDatabase.getInstance().getReference("Data").child("Student").child("users").child(ID);
+
+        reference.child("name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                DataSnapshot dataSnapshot= task.getResult();
+                String name= String.valueOf(dataSnapshot.getValue());
+                profileBtn.setText(name);
+            }
+        });
+
+
+
+
         try {
             reference.child("requestHistory").addValueEventListener(new ValueEventListener() {
                 @Override
@@ -97,13 +112,13 @@ public class s_home extends AppCompatActivity implements NavigationView.OnNaviga
             Log.d("EXCP", e.toString());
         }
 
-profileBtn.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        Intent intent = new Intent(s_home.this, s_profile.class);
-        startActivity(intent);
-    }
-});
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(s_home.this, s_profile.class);
+                startActivity(intent);
+            }
+        });
 
 //        logout.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -152,76 +167,6 @@ profileBtn.setOnClickListener(new View.OnClickListener() {
         recyclerView.setAdapter(requestsAdapter);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        // Handle navigation view item clicks here.
-        switch (item.getItemId()) {
-
-            case R.id.nav_home:{
-                navHome();
-                return true;
-            }
-
-            case R.id.nav_profile:
-            {
-                navProfile();
-                return true;
-            }
-
-            case R.id.nav_queries:
-            {
-                navQueries();
-                return true;
-            }
-
-            case R.id.nav_settings:{
-                navSettings();
-                return true;
-            }
-
-            }
-        //close navigation drawer
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    // override the onOptionsItemSelected()
-    // function to implement
-    // the item click listener callback
-    // to open and close the navigation
-    // drawer when the icon is clicked
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void navHome() {
-        Intent intent= new Intent(this, s_home.class);
-        startActivity(intent);
-        finish();
-    }
-    private void navProfile() {
-        Intent intent= new Intent(this, s_profile.class);
-        startActivity(intent);
-        finish();
-    }
-    private void navQueries() {
-        Intent intents= new Intent(this, queries.class);
-        startActivity(intents);
-        finish();
-    }
-    private void navSettings() {
-        Intent intents= new Intent(this, settings.class);
-        startActivity(intents);
-        finish();
-    }
-    private void setNavigationViewListener() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();

@@ -30,7 +30,7 @@ public class f_profile extends AppCompatActivity {
         getSupportActionBar().hide();
         userId= findViewById(R.id.name);
         name= findViewById(R.id.epf_background);
-        querybox=findViewById(R.id.requests);
+//        querybox=findViewById(R.id.requests);
         logout= findViewById(R.id.button);
         SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         ID= sharedPreferences.getString("fID", "");

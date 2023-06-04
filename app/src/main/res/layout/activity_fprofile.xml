@@ -49,7 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/backgroundTop">
 
             <TextView
-                android:id="@+id/studentName"
+                android:id="@+id/epf_background"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="85dp"
@@ -63,7 +63,7 @@
                 app:layout_constraintTop_toTopOf="@+id/profileBox" />
 
             <TextView
-                android:id="@+id/studentUsername"
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -74,7 +74,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/profileBox"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
-                app:layout_constraintTop_toBottomOf="@+id/studentName" />
+                app:layout_constraintTop_toBottomOf="@+id/epf_background" />
 
             <TextView
                 android:id="@+id/course"
@@ -88,7 +88,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
-                app:layout_constraintTop_toBottomOf="@+id/studentUsername" />
+                app:layout_constraintTop_toBottomOf="@+id/name" />
 
             <TextView
                 android:id="@+id/courseEntry"
@@ -101,7 +101,7 @@
                 android:textColor="@color/text"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/profileBox"
-                app:layout_constraintTop_toBottomOf="@+id/studentUsername" />
+                app:layout_constraintTop_toBottomOf="@+id/name" />
 
             <TextView
                 android:id="@+id/branch"
@@ -181,7 +181,7 @@
                 tools:layout_editor_absoluteY="288dp" />
 
             <Button
-                android:id="@+id/logoutBtn"
+                android:id="@+id/button"
                 android:layout_width="39dp"
                 android:layout_height="37dp"
                 android:layout_marginTop="60dp"

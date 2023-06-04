@@ -111,9 +111,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/requestHistory" />
 
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="391dp"
             android:layout_height="184dp"
+            android:orientation="horizontal"
             android:id="@+id/horizontal_list"
             app:layout_constraintBottom_toBottomOf="@+id/backgroundRectangle"
             app:layout_constraintEnd_toEndOf="parent"
@@ -127,11 +128,6 @@
     <!-- this the navigation view which draws and shows the navigation drawer -->
     <!-- include the menu created in the menu folder -->
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:menu="@menu/navigation_menu" />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

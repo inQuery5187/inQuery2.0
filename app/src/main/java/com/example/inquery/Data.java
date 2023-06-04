@@ -4,13 +4,21 @@ public class Data {
 private String name;
 private String pwd;
 private String username;
+private String course;
 private String branch;
 private String rollno;
-private String gender;
+private String yearAndSec;
 private String phoneno;
 private String email;
 private String address;
 private String cpwd;
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
 
     public String getCpwd() { return cpwd; }
 
@@ -28,9 +36,9 @@ private String cpwd;
 
     public void setEmail(String email) { this.email = email; }
 
-    public String getGender() { return gender; }
+    public String getYearAndSec() { return yearAndSec; }
 
-    public void setGender(String gender) { this.gender = gender; }
+    public void setYearAndSec(String yearAndSec) { this.yearAndSec = yearAndSec; }
 
     public String getRollno() { return rollno; }
 
