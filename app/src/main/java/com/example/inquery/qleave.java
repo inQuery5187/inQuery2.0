@@ -55,7 +55,6 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
             @Override
             public void onClick(View v) {
 
-
                 if(toAdd!=null){
                     Set<String> adding= new HashSet<String>(toAdd);
                     toAdd= new ArrayList<>(adding);

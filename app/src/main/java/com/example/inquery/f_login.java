@@ -58,7 +58,7 @@ public class f_login extends AppCompatActivity {
                                 if(pwdChk.equals(pwd)){
 
                                     Toast.makeText(f_login.this, "Logged in using Password!", Toast.LENGTH_SHORT).show();
-                                    Intent extraIntent = new Intent(f_login.this, f_profile.class);
+                                    Intent extraIntent = new Intent(f_login.this, f_chooseRequests.class);
                                     SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
                                     editor.putString("fID", ID);
@@ -107,7 +107,7 @@ public class f_login extends AppCompatActivity {
         String check = sharedPreferences.getString("Flag", "");
 
         if(check.equals("true")){
-            Intent extraIntent = new Intent(f_login.this, f_profile.class);
+            Intent extraIntent = new Intent(f_login.this, f_chooseRequests.class);
             startActivity(extraIntent);
             finish();
         }

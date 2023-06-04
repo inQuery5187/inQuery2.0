@@ -67,18 +67,18 @@ public class f_profile extends AppCompatActivity {
             }
 
         });
-        querybox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(f_profile.this, f_chooseRequests.class);
-                startActivity(intent);
-            }
-        });
+//        querybox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent= new Intent(f_profile.this, f_chooseRequests.class);
+//                startActivity(intent);
+//            }
+//        });
     }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(f_profile.this, MainActivity.class);
+        Intent intent = new Intent(f_profile.this, f_chooseRequests.class);
         startActivity(intent);
         finish();
     }
