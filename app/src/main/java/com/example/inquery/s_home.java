@@ -64,7 +64,7 @@ public class s_home extends AppCompatActivity {
         requests.add("Misconduct");
         requests.add("Custom");
 
-        HorizontalListAdapter horizontalListAdapter = new HorizontalListAdapter(this, images, requests);
+        HorizontalListAdapter horizontalListAdapter = new HorizontalListAdapter(this, images, requests, "S");
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         listView.setLayoutManager(layoutManager);
         listView.setAdapter(horizontalListAdapter);
@@ -117,6 +117,7 @@ public class s_home extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(s_home.this, s_profile.class);
                 startActivity(intent);
+                finish();
             }
         });
 

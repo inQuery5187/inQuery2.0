@@ -21,11 +21,13 @@ public class HorizontalListAdapter extends RecyclerView.Adapter<HorizontalListAd
     private ArrayList<Integer> images;
     private ArrayList<String> requests;
     private Context context;
+    private String user;
 
-    public HorizontalListAdapter(Context context, ArrayList<Integer> images, ArrayList<String> requests) {
+    public HorizontalListAdapter(Context context, ArrayList<Integer> images, ArrayList<String> requests, String user) {
         this.images = images;
         this.requests= requests;
         this.context= context;
+        this.user= user;
     }
 
     @NonNull
@@ -43,28 +45,60 @@ public class HorizontalListAdapter extends RecyclerView.Adapter<HorizontalListAd
         int image= images.get(position);
         holder.imageView.setImageResource(image);
         holder.textView.setText(request);
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(holder.getAdapterPosition()== 0){
-                    Intent intent = new Intent(context, qleave.class);
-                    context.startActivity(intent);
-                }
-                else if(holder.getAdapterPosition()== 1) {
-                    Intent intent = new Intent(context, qcomplaint.class);
-                    context.startActivity(intent);
-                }
-                else if(holder.getAdapterPosition()== 2) {
-                    Intent intent = new Intent(context, qmisconduct.class);
-                    context.startActivity(intent);
-                }
-                else if(holder.getAdapterPosition()== 3) {
-                    Intent intent = new Intent(context, qcustom.class);
-                    context.startActivity(intent);
-                }
+        if(user.equals("S")){
+            holder.imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(holder.getAdapterPosition()== 0){
+                        Intent intent = new Intent(context, qleave.class);
+                        context.startActivity(intent);
+                    }
+                    else if(holder.getAdapterPosition()== 1) {
+                        Intent intent = new Intent(context, qcomplaint.class);
+                        context.startActivity(intent);
+                    }
+                    else if(holder.getAdapterPosition()== 2) {
+                        Intent intent = new Intent(context, qmisconduct.class);
+                        context.startActivity(intent);
+                    }
+                    else if(holder.getAdapterPosition()== 3) {
+                        Intent intent = new Intent(context, qcustom.class);
+                        context.startActivity(intent);
+                    }
 
-            }
-        });
+                }
+            });
+        }
+        else if(user.equals("F")){
+            holder.imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(holder.getAdapterPosition()== 0){
+                        Intent intent = new Intent(context, f_requests.class);
+                        intent.putExtra("type", "leave");
+                        context.startActivity(intent);
+                    }
+                    else if(holder.getAdapterPosition()== 1) {
+                        Intent intent = new Intent(context, f_requests.class);
+                        intent.putExtra("type", "complaints");
+                        context.startActivity(intent);
+                    }
+                    else if(holder.getAdapterPosition()== 2) {
+                        Intent intent = new Intent(context, f_requests.class);
+                        intent.putExtra("type", "misconduct");
+                        context.startActivity(intent);
+
+                    }
+                    else if(holder.getAdapterPosition()== 3) {
+                        Intent intent = new Intent(context, f_requests.class);
+                        intent.putExtra("type", "custom");
+                        context.startActivity(intent);
+                    }
+
+                }
+            });
+        }
+
 
 
     }

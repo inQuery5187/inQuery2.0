@@ -19,8 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class f_profile extends AppCompatActivity {
     DatabaseReference reference;
-    TextView userId, name;
-    Button querybox, logout;
+    TextView userId, name, department, design, number, email;
+    Button logout;
     String ID;
     private static final String SHARED_PREFS= "sharedPrefs";
     @Override
@@ -30,11 +30,26 @@ public class f_profile extends AppCompatActivity {
         getSupportActionBar().hide();
         userId= findViewById(R.id.name);
         name= findViewById(R.id.epf_background);
-//        querybox=findViewById(R.id.requests);
         logout= findViewById(R.id.button);
+        department= findViewById(R.id.courseEntry);
+        design= findViewById(R.id.branchEntry);
+        number = findViewById(R.id.yearnSecEntry);
+        email= findViewById(R.id.emailEntry);
         SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         ID= sharedPreferences.getString("fID", "");
-
+        reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty").child("users").child(ID);
+        reference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                DataSnapshot snapshot= task.getResult();
+                name.setText(String.valueOf(snapshot.child("name").getValue()));
+                userId.setText(String.valueOf(snapshot.child("username").getValue()));
+                department.setText(String.valueOf(snapshot.child("department").getValue()));
+                design.setText(String.valueOf(snapshot.child("designation").getValue()));
+                number.setText(String.valueOf(snapshot.child("phoneno").getValue()));
+                email.setText(String.valueOf(snapshot.child("email").getValue()));
+            }
+        });
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,30 +65,8 @@ public class f_profile extends AppCompatActivity {
             }
         });
 
-        reference= FirebaseDatabase.getInstance().getReference("Data").child("Faculty").child("users");
-        reference.child(ID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (task.isSuccessful()) {
-                    if (task.getResult().exists()) {
 
-                        DataSnapshot dataSnapshot = task.getResult();
-                        String user = String.valueOf(dataSnapshot.child("username").getValue());
-                        String nam = String.valueOf(dataSnapshot.child("name").getValue());
-                        userId.setText(user);
-                        name.setText(nam);
-                    }
-                }
-            }
 
-        });
-        querybox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(f_profile.this, f_chooseRequests.class);
-                startActivity(intent);
-            }
-        });
     }
     @Override
     public void onBackPressed() {

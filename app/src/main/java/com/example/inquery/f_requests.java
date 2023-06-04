@@ -52,6 +52,7 @@ public class f_requests extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frequests);
+        getSupportActionBar().hide();
         showType= findViewById(R.id.textView5);
         showReq= findViewById(R.id.noReq);
         showReq.setVisibility(View.INVISIBLE);

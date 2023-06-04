@@ -28,7 +28,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/background_et"
         android:ems="10"
-        android:hint="admission number"
+        android:hint="Faculty code"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"

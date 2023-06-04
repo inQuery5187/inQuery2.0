@@ -49,6 +49,9 @@ public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.Reques
             holder.idTextView.setText(str+request.getSender());
             holder.typeTextView.setText("Type: "+type);
             holder.reasonTextView.setText(request.getReason());
+            holder.showDeny.setVisibility(View.INVISIBLE);
+            holder.showPending.setVisibility(View.INVISIBLE);
+            holder.showApprove.setVisibility(View.INVISIBLE);
             holder.approve.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
