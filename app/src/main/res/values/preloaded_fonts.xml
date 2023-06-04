@@ -2,7 +2,6 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/montserrat</item>
-        <item>@font/montserrat_alternates_bold</item>
         <item>@font/montserrat_alternates_extrabold</item>
         <item>@font/montserrat_subrayada_bold</item>
     </array>
