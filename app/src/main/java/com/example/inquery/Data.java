@@ -11,7 +11,26 @@ private String yearAndSec;
 private String phoneno;
 private String email;
 private String address;
-private String cpwd;
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    private String cpwd;
+private String department;
+private String designation;
     public String getCourse() {
         return course;
     }

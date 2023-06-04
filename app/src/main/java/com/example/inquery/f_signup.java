@@ -15,11 +15,26 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class f_signup extends AppCompatActivity {
     EditText name, userID, userPwd, cpwd;
     ImageView submit, pwdsh, cpwdsh;
     DatabaseReference reference;
-    Data Data;
+
+    public static boolean isValidPassword(String password){
+        String regex = "^(?=.*[0-9])"
+                + "(?=.*[a-z])(?=.*[A-Z])"
+                + "(?=.*[@#$%^&+=])"
+                + "(?=\\S+$).{8,20}$";
+        Pattern p = Pattern.compile(regex);
+        if (password == null) {
+            return false;
+        }
+        Matcher m = p.matcher(password);
+        return m.matches();
+    }
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -34,28 +49,42 @@ public class f_signup extends AppCompatActivity {
         submit = findViewById(R.id.signUp);
         pwdsh = findViewById(R.id.icon_pwd);
         cpwdsh = findViewById(R.id.cpwd_img);
-        Data = new Data();
-        int i = 1;
+
         reference = FirebaseDatabase.getInstance().getReference().child("Data").child("Faculty").child("users");
-        submit.setOnClickListener(new View.OnClickListener() {
+        submit.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                submit.setImageResource(R.drawable.button_medium_dark);
+            public void onClick(View view){
                 String nam = name.getText().toString().trim();
                 String usernam = userID.getText().toString().trim();
-                String p = userPwd.getText().toString();
+                String p= userPwd.getText().toString();
                 String cp = cpwd.getText().toString();
-                if (p.equals(cp)) {
-                    Data.setName(nam);
-                    Data.setUsername(usernam);
-                    Data.setPwd(p);
-                    reference.child(userID.getText().toString().trim()).setValue(Data);
-                    Toast.makeText(f_signup.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(f_signup.this, f_login.class);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    Toast.makeText(f_signup.this, "password and repeat password don't match", Toast.LENGTH_SHORT).show();
+                if (usernam.length()>=12){
+                    if (nam!=null){
+                        if (isValidPassword(p)){
+                            if (p.equals(cp)) {
+                                Bundle bundle= new Bundle();
+                                bundle.putString("name", nam);
+                                bundle.putString("username", usernam);
+                                bundle.putString("pwd", p);
+                                Intent intent = new Intent(f_signup.this, f_completesignup.class);
+                                intent.putExtras(bundle);
+                                startActivity(intent);
+                                finish();
+                            }
+                            else{
+                                Toast.makeText(f_signup.this, "password and repeat password don't match", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else{
+                            Toast.makeText(f_signup.this, "Please enter a valid password", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(f_signup.this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else{
+                    Toast.makeText(f_signup.this, "Please enter your correct ID no.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
