@@ -19,46 +19,46 @@
             android:id="@+id/queryType"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:maxWidth="180dp"
-            android:textColor="@color/text"
-            android:fontFamily="@font/montserrat"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:text="Query Type:"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="clip_horizontal|left|center_vertical"
+            android:maxWidth="180dp"
+            android:text="Query Type:"
+            android:textColor="@color/text"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/sender"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:maxWidth="180dp"
-            android:textColor="@color/text"
-            android:fontFamily="@font/montserrat"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:text="Sender:"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/queryType"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="clip_horizontal|left|center_vertical"
+            android:maxWidth="180dp"
+            android:text="Sender:"
+            android:textColor="@color/text"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/subject"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:maxWidth="180dp"
-            android:textColor="@color/text"
-            android:fontFamily="@font/montserrat"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:text="Subject:"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/sender"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="clip_horizontal|left|center_vertical"
+            android:maxWidth="180dp"
+            android:text="Subject:"
+            android:textColor="@color/text"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
 
         <TextView

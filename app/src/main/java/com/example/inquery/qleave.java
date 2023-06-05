@@ -82,6 +82,7 @@ public class qleave extends AppCompatActivity implements DatePickerDialog.OnDate
                 else{
                     Toast.makeText(qleave.this, "Please select the faculty", Toast.LENGTH_SHORT).show();
                 }
+                submit.setImageResource(R.drawable.button_medium);
             }
         });
         btPickDate.setOnClickListener(new View.OnClickListener() {

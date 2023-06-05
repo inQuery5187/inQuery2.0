@@ -14,4 +14,5 @@
     <color name="accent1">#7ED2C0</color>
     <color name="accent2">#C9E8FD</color>
     <color name="denied">#BC6B6B</color>
+    <color name="button1_click">#3949AC</color>
 </resources>
